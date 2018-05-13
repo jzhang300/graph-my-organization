@@ -1,6 +1,6 @@
 ## Graph My Organization (work in progress)
 
-Live demo: https://jzhang300.github.io/org-viz/
+Live demo: https://jzhang300.github.io/graph-my-organization/
 
 Current Snapshot:
 ![screen shot 2018-05-13 at 2 34 29 pm](https://user-images.githubusercontent.com/1449523/39971077-faae6c58-56ba-11e8-8d08-0527cdba7c0a.jpg)
