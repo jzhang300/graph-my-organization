@@ -1,0 +1,502 @@
+_id,Employee,Location,Product,Squad,Role,Skills
+5af86b41603dd6415cfd99bb,Margo Ratliff,San Francisco,Foundations,Squad 2,Fullstack Developer,UI
+5af86b41831b8b8af46ee42a,Delgado Fields,Austin,Supply Chain,Squad 1,Visual Designer,NodeJS
+5af86b413109e7520486a9a5,Sondra Gamble,New York City,Supply Chain,Squad 2,Backend Developer,ReactJS
+5af86b416cbff9906e601610,Angelica King,Austin,Foundations,Squad 3,UX Designer,ReactJS
+5af86b413631b2007faa5167,Maynard Terrell,Austin,UX,Squad 3,Fullstack Developer,UI
+5af86b41746411349c94b11b,Bender Bowers,New York City,Supply Chain,Squad 4,Backend Developer,NodeJS
+5af86b41b556ac7bde414adb,Cleo Richmond,New York City,Supply Chain,Squad 4,UX Designer,Content Management
+5af86b419a550bb953842b2b,Emily Morrow,San Francisco,Healthcare,Squad 1,Frontend Developer,UI
+5af86b414b2d5a024f8b9aec,Lynda Crane,New York City,UX,Squad 7,Backend Developer,Agile
+5af86b41b9d49823317f42b6,Juliet Clemons,Seattle,UX,Squad 5,Fullstack Developer,Agile
+5af86b41a399bc725510cd56,Paulette England,Seattle,Healthcare,Squad 3,Fullstack Developer,Design Thinking
+5af86b412cfea0aaf71a741f,Lillie Hood,Austin,Healthcare,Squad 4,Backend Developer,ReactJS
+5af86b41542147591348adba,Latisha Noel,New York City,Healthcare,Squad 6,Frontend Developer,Content Management
+5af86b4195c315fb90d68a56,Knox Miles,New York City,Supply Chain,Squad 8,Product Manager,Ruby
+5af86b4104a760e7f14dc3cc,Hannah Rosario,San Francisco,UX,Squad 6,Fullstack Developer,NodeJS
+5af86b418bbdd0f385a7d701,Virgie Zamora,San Francisco,Foundations,Squad 2,Fullstack Developer,UI
+5af86b41c5f7465ed8f62c44,Carney Everett,New York City,Healthcare,Squad 2,UX Designer,Design Thinking
+5af86b4166f1a54dba7f7f73,Leanne Stein,San Francisco,Foundations,Squad 5,Visual Designer,ReactJS
+5af86b415df38eb10ae4e4be,Mccoy Curtis,Seattle,UX,Squad 1,UX Designer,ReactJS
+5af86b41e809d5fa945e5d9d,Vonda Alston,San Francisco,Foundations,Squad 1,Visual Designer,ReactJS
+5af86b4119d3634497f73d1e,Shari Bates,Austin,UX,Squad 2,Frontend Developer,UI
+5af86b41ecbc226ecf113f36,Rhonda Lucas,Austin,UX,Squad 4,UX Designer,Ruby
+5af86b41f4f5db3f3fa1af74,Blevins Hamilton,Austin,Supply Chain,Squad 8,Manager,Design Thinking
+5af86b4145ad6979942e1bb2,Lorraine Gross,Austin,Foundations,Squad 7,Frontend Developer,Agile
+5af86b41990b70a01308dee2,Laurel Guthrie,Seattle,Healthcare,Squad 1,Product Manager,Content Management
+5af86b415fe7d3c266f08879,Stein Morton,New York City,UX,Squad 7,Frontend Developer,UI
+5af86b413ee86ca355ab190c,Olga Rich,San Francisco,Healthcare,Squad 3,Product Manager,NodeJS
+5af86b41026f5ab3c65a3e24,Lillian Rutledge,Seattle,Foundations,Squad 6,Manager,ReactJS
+5af86b41baaf373ad27c4912,Lina Tyson,San Francisco,Supply Chain,Squad 7,Visual Designer,Content Management
+5af86b41b5132c4a38d00560,Hilda Haynes,New York City,Supply Chain,Squad 7,Visual Designer,ReactJS
+5af86b41262ba6c6fb860475,Silva Salas,New York City,Foundations,Squad 7,Product Manager,Content Management
+5af86b415c9f566e8362eb22,Iris Buckner,Austin,Supply Chain,Squad 2,Backend Developer,Agile
+5af86b41742ce6877a6f9a34,Rosemarie Castro,New York City,Healthcare,Squad 8,Backend Developer,UI
+5af86b4104d115e9acb0aa4b,Lara Hensley,New York City,UX,Squad 8,Visual Designer,NodeJS
+5af86b4100b63f1bc21f7b78,Mcclure Ware,Seattle,UX,Squad 1,Frontend Developer,Design Thinking
+5af86b415761b30df37a192a,Louisa Weeks,San Francisco,Supply Chain,Squad 8,Backend Developer,Content Management
+5af86b41bb4b4ef53c0660ba,Stark Sargent,San Francisco,Supply Chain,Squad 4,Frontend Developer,UI
+5af86b41bf22c20dd4d35566,Rios Brewer,Seattle,Foundations,Squad 5,Product Manager,Agile
+5af86b412d46e69245a00f5c,Teri Alvarado,Austin,Healthcare,Squad 1,Frontend Developer,Content Management
+5af86b4104d67877c9079a21,Lila Leon,Austin,Supply Chain,Squad 4,Fullstack Developer,Agile
+5af86b41f49584e28ab6d2a3,Emerson Lambert,Austin,Supply Chain,Squad 3,Backend Developer,Content Management
+5af86b416e34ba8613cfbff1,Anne Norton,New York City,Healthcare,Squad 6,Frontend Developer,NodeJS
+5af86b417429fd71d579dc17,Mcintosh Duffy,San Francisco,Foundations,Squad 8,Manager,Agile
+5af86b413c7bf45d01af57a9,Burt Montoya,Seattle,UX,Squad 5,Manager,NodeJS
+5af86b4199388d51720eded6,Leta Morgan,New York City,Foundations,Squad 8,Frontend Developer,Agile
+5af86b41b30a0daf75e1a1b5,Shawn Bradford,Seattle,Healthcare,Squad 3,Frontend Developer,Design Thinking
+5af86b418082f84fccf6be30,Ashlee Hickman,Austin,UX,Squad 1,UX Designer,Content Management
+5af86b41e4b687190731360d,Antonia Hayes,New York City,UX,Squad 1,Backend Developer,Content Management
+5af86b410c6925178f72c8f3,Weaver Barron,New York City,Healthcare,Squad 5,Manager,Ruby
+5af86b41b676257998c2091e,Harrison Gilbert,San Francisco,Foundations,Squad 8,Frontend Developer,Ruby
+5af86b41fc4d2d9901c5f611,Long Holland,New York City,Healthcare,Squad 7,Backend Developer,Design Thinking
+5af86b413442addf8d25746a,Cunningham Landry,Austin,Foundations,Squad 5,Backend Developer,ReactJS
+5af86b41526904296a25a2b3,Jill Lancaster,New York City,UX,Squad 8,Fullstack Developer,NodeJS
+5af86b41a32d7a145e859186,Terrie Battle,Seattle,Foundations,Squad 7,Visual Designer,NodeJS
+5af86b413e47a89823d8964a,Sheila Byers,Austin,UX,Squad 6,Backend Developer,Agile
+5af86b414fc656f812505c1f,Eula Maddox,San Francisco,Supply Chain,Squad 4,Backend Developer,Design Thinking
+5af86b417bf8511844ab38fc,Kim Blankenship,New York City,UX,Squad 3,Manager,UI
+5af86b41dcdf0103e496d79d,Gonzales Mcdowell,New York City,Foundations,Squad 3,UX Designer,Ruby
+5af86b41312385cbd26e52c3,Leigh Diaz,San Francisco,Foundations,Squad 1,Fullstack Developer,Agile
+5af86b4111b12625f92b75fc,Kathrine Stevenson,New York City,UX,Squad 5,UX Designer,Agile
+5af86b4126f6dfebf306e4f3,French Wyatt,Austin,UX,Squad 8,UX Designer,Ruby
+5af86b41ef287193ff1dd821,Barry Howard,Austin,Healthcare,Squad 4,Fullstack Developer,Agile
+5af86b41c3044a02f0a3739d,Dolly Hancock,New York City,Healthcare,Squad 2,Fullstack Developer,Content Management
+5af86b41f8cecc2b4cb8bd51,Morgan Bennett,New York City,Foundations,Squad 2,Visual Designer,Agile
+5af86b41b32196311688212f,Meagan Wallace,San Francisco,Supply Chain,Squad 8,Fullstack Developer,UI
+5af86b4191815893f8cafd6f,Hughes Arnold,New York City,Foundations,Squad 5,Manager,Design Thinking
+5af86b41e5cd6288c287d512,Irene Delacruz,Austin,Healthcare,Squad 4,Frontend Developer,Design Thinking
+5af86b4133b4c73a59dbc26c,Ingram Duke,New York City,UX,Squad 7,Fullstack Developer,Ruby
+5af86b410f02ad07679e5c76,Howell Garza,Seattle,Healthcare,Squad 8,Frontend Developer,Ruby
+5af86b412a4007c96df681f2,Bette Brown,Seattle,UX,Squad 1,UX Designer,Ruby
+5af86b413cedf3c82deef7a9,Joann Mclaughlin,Austin,Foundations,Squad 4,Manager,Design Thinking
+5af86b41ac82acb71b767d8a,Patton Rivas,Austin,UX,Squad 8,Backend Developer,Ruby
+5af86b415d2a04da5e2c85f8,Shana Conway,Austin,Supply Chain,Squad 1,Product Manager,UI
+5af86b4177ae7604a921b19c,Sanders Horne,San Francisco,Supply Chain,Squad 1,Frontend Developer,Agile
+5af86b41c9504cff0496b2d9,Annette Carpenter,San Francisco,Supply Chain,Squad 6,UX Designer,Agile
+5af86b4116ee178559bc04fb,Minnie Kerr,San Francisco,UX,Squad 3,Manager,UI
+5af86b4159bdeacf4504d0e3,Leon Higgins,Austin,Foundations,Squad 4,Fullstack Developer,Agile
+5af86b41c2f40917327b917a,Trina Cameron,Seattle,UX,Squad 4,Backend Developer,ReactJS
+5af86b41b2b537c2944f7baf,Roxanne Gallegos,New York City,Healthcare,Squad 6,Visual Designer,Ruby
+5af86b419ba0cad953028a50,Dixie Lester,San Francisco,Healthcare,Squad 4,Fullstack Developer,ReactJS
+5af86b4126f1af3b3dfd51d1,Patricia Donaldson,Austin,Foundations,Squad 8,Product Manager,Design Thinking
+5af86b413f47b9e4442731d1,Watts Campos,San Francisco,UX,Squad 4,Manager,Ruby
+5af86b419d6fe6728cd3486d,Tania Norris,Seattle,Supply Chain,Squad 7,Visual Designer,Content Management
+5af86b41f8e0a0b488053073,Crawford Hyde,San Francisco,UX,Squad 2,Backend Developer,Design Thinking
+5af86b41fd7cc2cd352e966b,Susie Leach,Seattle,UX,Squad 5,UX Designer,Ruby
+5af86b418817d14345b6c473,Naomi Carroll,San Francisco,Healthcare,Squad 1,Visual Designer,UI
+5af86b419f480e42414afff3,Estes Le,San Francisco,UX,Squad 2,Backend Developer,Design Thinking
+5af86b41ea23d8ba6d9a593e,Ericka Ewing,New York City,UX,Squad 1,Product Manager,NodeJS
+5af86b41a8f1d41aa329e33d,Roseann Cohen,San Francisco,Foundations,Squad 2,Fullstack Developer,Content Management
+5af86b415bf02caa07a88327,Angelia Perry,Austin,Foundations,Squad 4,Product Manager,NodeJS
+5af86b4126ed40e1fdc665b1,John Spears,San Francisco,UX,Squad 2,Fullstack Developer,Agile
+5af86b41eb7c8d01d5110ca7,Everett Paul,San Francisco,Healthcare,Squad 8,Manager,NodeJS
+5af86b41af4f26d764f96c73,Doris Farmer,Seattle,Healthcare,Squad 8,Visual Designer,Agile
+5af86b417be19e8c8b5cabbb,Ortega Bolton,Austin,Foundations,Squad 5,Manager,Agile
+5af86b41aa888166c8479507,Spears Graham,San Francisco,Healthcare,Squad 7,Manager,ReactJS
+5af86b41e455f7a9f7e3bede,Dianna Knowles,Seattle,UX,Squad 3,UX Designer,Design Thinking
+5af86b41c608ce9ddeb4b36b,Jones Lamb,San Francisco,UX,Squad 5,UX Designer,Agile
+5af86b412917cd592ec25ac0,Davenport Cline,Seattle,Supply Chain,Squad 2,Product Manager,UI
+5af86b4182718cb954f3283e,Alana Whitney,Seattle,UX,Squad 8,Backend Developer,NodeJS
+5af86b411d8b88b09e14362f,Townsend Bruce,San Francisco,Foundations,Squad 6,UX Designer,NodeJS
+5af86b418bfee02076d7aaf0,Russo Carver,San Francisco,UX,Squad 7,UX Designer,UI
+5af86b41ae9b53441c167b7f,Mcknight Curry,New York City,Foundations,Squad 3,Manager,NodeJS
+5af86b41bfce455b588dc494,Sonya Wilson,Austin,UX,Squad 2,UX Designer,Design Thinking
+5af86b4117b2a6cb1635ceb5,Dina Whitehead,San Francisco,Supply Chain,Squad 3,Fullstack Developer,Ruby
+5af86b411e118912eb3b94d2,Dillon Holloway,New York City,Healthcare,Squad 2,Product Manager,Ruby
+5af86b418dde99c373501d07,Erickson Gardner,New York City,UX,Squad 1,Manager,Agile
+5af86b41c633e116bebbcb89,Armstrong Ferrell,San Francisco,Healthcare,Squad 3,Frontend Developer,Design Thinking
+5af86b41c45426dd22cd9ecd,Tammie Oconnor,San Francisco,UX,Squad 6,UX Designer,Ruby
+5af86b41a78df8ef01ff9b56,Lynn Delgado,Austin,Healthcare,Squad 3,Product Manager,Ruby
+5af86b41ac6ff75e8acb45de,Yang Estes,San Francisco,Healthcare,Squad 4,Backend Developer,Agile
+5af86b411f9791dfdb050c8e,Velasquez Daniel,Austin,Foundations,Squad 7,Manager,Content Management
+5af86b410d7e6ab80bb4021c,Rose Franks,Seattle,UX,Squad 8,Frontend Developer,UI
+5af86b41c458401f02b1a0e0,Carver Levy,San Francisco,Healthcare,Squad 3,UX Designer,NodeJS
+5af86b419a4a12ebe71cafda,Etta Hammond,Seattle,Supply Chain,Squad 8,Visual Designer,Design Thinking
+5af86b416b20e9ef1c40b7c5,Yates Merrill,Austin,Supply Chain,Squad 6,Fullstack Developer,UI
+5af86b4198523b874562790f,Katy Wall,San Francisco,UX,Squad 3,Fullstack Developer,Content Management
+5af86b41738bcd86299b5b6a,Essie Graves,San Francisco,Foundations,Squad 1,Fullstack Developer,Content Management
+5af86b41aeed19fc8abc1dd0,Daphne Villarreal,Seattle,Healthcare,Squad 7,Product Manager,Design Thinking
+5af86b4165d75f8e839ce2a9,Richard Tucker,Seattle,Foundations,Squad 7,Backend Developer,Content Management
+5af86b4107956e3b45ba2962,Keisha Atkins,San Francisco,Foundations,Squad 8,Frontend Developer,ReactJS
+5af86b41533af095bfeb567b,Franco Sims,Seattle,Healthcare,Squad 5,Manager,Agile
+5af86b41e319cdbf09d8ebd7,Bowman Hampton,Seattle,Supply Chain,Squad 1,Frontend Developer,NodeJS
+5af86b41a6131d8a3cb3ca20,Penelope Velasquez,San Francisco,UX,Squad 8,Frontend Developer,ReactJS
+5af86b4109372a257917a1ac,Sanford Sampson,New York City,Foundations,Squad 1,Fullstack Developer,Agile
+5af86b41794bd6fb09e2eb65,Joanne Herrera,Austin,Healthcare,Squad 2,UX Designer,UI
+5af86b41fd34f5fe1a3f8dd0,Burton Phillips,Seattle,Foundations,Squad 5,Backend Developer,Agile
+5af86b41bc09781b94c8061b,Kaitlin Torres,New York City,Healthcare,Squad 3,Fullstack Developer,UI
+5af86b414a499cefa9daa775,Joyner Bowman,Seattle,Foundations,Squad 3,UX Designer,ReactJS
+5af86b41df98aab2de15b8c9,Rocha Joyner,Seattle,Healthcare,Squad 8,Backend Developer,Content Management
+5af86b411e9d622d0be0c86f,Janine Calderon,Seattle,Supply Chain,Squad 6,Backend Developer,Ruby
+5af86b418568920c7e8baf84,Bass Jensen,San Francisco,Supply Chain,Squad 1,UX Designer,Agile
+5af86b4198e350e6cec2ded8,Leonard Ramos,San Francisco,UX,Squad 5,UX Designer,ReactJS
+5af86b4172b7b0932fb36389,Raquel Pennington,New York City,Foundations,Squad 2,Backend Developer,Ruby
+5af86b41f04824f378e98081,Althea Edwards,San Francisco,UX,Squad 5,Product Manager,Content Management
+5af86b417226f92d4f79d7a7,Nunez Chambers,San Francisco,Healthcare,Squad 2,Fullstack Developer,Ruby
+5af86b418db67eaf702af58c,Casey Garrison,San Francisco,UX,Squad 8,Frontend Developer,ReactJS
+5af86b413a7641b1c3db7c27,Farley Snider,Austin,Healthcare,Squad 2,UX Designer,Ruby
+5af86b41d6786690d1fee8ad,Harrell Booth,Austin,Supply Chain,Squad 6,Product Manager,NodeJS
+5af86b41a6c3035d3f903b03,Holcomb Fisher,New York City,Healthcare,Squad 4,Product Manager,NodeJS
+5af86b41150912c8c2ba7190,Jodie Shaffer,San Francisco,Supply Chain,Squad 1,Backend Developer,UI
+5af86b41a0868bd6eedcb292,Clayton Wells,New York City,Supply Chain,Squad 2,Visual Designer,ReactJS
+5af86b410700ba6341ef16a4,Alissa Griffith,New York City,Foundations,Squad 5,Product Manager,Design Thinking
+5af86b410d4608f6e882c0db,Antoinette Ellison,San Francisco,Supply Chain,Squad 4,Visual Designer,Ruby
+5af86b41a45dacd3ee729fbb,Nichole Blevins,Seattle,Supply Chain,Squad 6,UX Designer,Ruby
+5af86b413ca7b275b3332d2f,Casey Pollard,New York City,Foundations,Squad 4,Backend Developer,Agile
+5af86b4140bdc20b70b4536f,Margaret Juarez,Seattle,Supply Chain,Squad 8,Backend Developer,ReactJS
+5af86b41cf11bd75dab1c45e,Holmes Carrillo,Seattle,Healthcare,Squad 1,Visual Designer,Ruby
+5af86b41297b798ef9b671a2,Joyce Fleming,San Francisco,Foundations,Squad 8,UX Designer,UI
+5af86b4139dcba8459d67cf7,Hood Tyler,San Francisco,Supply Chain,Squad 7,Visual Designer,NodeJS
+5af86b4174f0e5ce1cc0eb8d,Estella Jimenez,San Francisco,UX,Squad 4,Backend Developer,ReactJS
+5af86b41682b26a0d4fb95be,Darcy Hughes,Seattle,Foundations,Squad 7,Fullstack Developer,Agile
+5af86b412e1215154b9901dd,Ruby Moreno,San Francisco,Healthcare,Squad 8,Backend Developer,NodeJS
+5af86b4158a212744cb664a4,Madelyn Sutton,Austin,Healthcare,Squad 8,Backend Developer,ReactJS
+5af86b419aa0b95bb4b53492,Zimmerman Raymond,New York City,UX,Squad 8,Frontend Developer,UI
+5af86b41347091ae29cbd476,Willie Mcmahon,San Francisco,Healthcare,Squad 8,Product Manager,Design Thinking
+5af86b41e11e4ed2feee0aea,Sharron Alexander,New York City,UX,Squad 4,Frontend Developer,UI
+5af86b41bcaf27aee1bef0a0,Mitchell Freeman,New York City,UX,Squad 6,Manager,NodeJS
+5af86b410bba13053bb8f310,Chandler Shepard,New York City,UX,Squad 8,Frontend Developer,NodeJS
+5af86b411084803687699f3c,Sellers Page,Austin,UX,Squad 2,Backend Developer,ReactJS
+5af86b4193d17d928fd0d2e4,Small Morales,Seattle,UX,Squad 4,Product Manager,ReactJS
+5af86b41f9fe74d961ea8c21,Wilda Berg,San Francisco,Foundations,Squad 6,Visual Designer,Content Management
+5af86b410d0544308df85c71,Bishop Cleveland,Austin,Foundations,Squad 5,UX Designer,Content Management
+5af86b4170b54a138b9c8d41,Downs Abbott,San Francisco,Healthcare,Squad 5,Visual Designer,Ruby
+5af86b413db503f48e64e231,Moreno Conrad,Seattle,Foundations,Squad 1,Product Manager,UI
+5af86b41dbd8afcef12a88eb,Nelson Marshall,San Francisco,Foundations,Squad 4,Backend Developer,Agile
+5af86b4118ba1deb218f5d02,Kathie Mullins,Seattle,UX,Squad 7,Product Manager,UI
+5af86b41ab2ae732c5407758,Bridgette Sheppard,Austin,Supply Chain,Squad 4,Visual Designer,Ruby
+5af86b41c1ef6157167dcfac,Marta Hodge,Seattle,Foundations,Squad 4,Frontend Developer,UI
+5af86b410cc09b6f625a4036,Callie Greene,Austin,Foundations,Squad 1,UX Designer,Content Management
+5af86b412b35b6c37ffce333,Florine Shields,San Francisco,Supply Chain,Squad 2,Product Manager,NodeJS
+5af86b41ac59c23e9a600eca,Rodgers Moran,San Francisco,UX,Squad 6,Fullstack Developer,UI
+5af86b41631be69e75a365e9,Kelly Delaney,San Francisco,Healthcare,Squad 2,Backend Developer,Design Thinking
+5af86b41055e4e37ef832d2f,Prince Pierce,San Francisco,UX,Squad 5,UX Designer,Design Thinking
+5af86b416e76f0bb30aec769,Benita Turner,New York City,Healthcare,Squad 8,Fullstack Developer,ReactJS
+5af86b414d8384942ee880d4,Alma Ball,New York City,UX,Squad 2,Fullstack Developer,NodeJS
+5af86b41e1f13f670221529c,Clemons Goodman,San Francisco,Foundations,Squad 5,Product Manager,NodeJS
+5af86b416d6f92dae1c923f2,Hayden Snow,New York City,UX,Squad 3,Frontend Developer,Ruby
+5af86b41772450225d629240,Joy Noble,Austin,Foundations,Squad 3,Backend Developer,Ruby
+5af86b41f4b8b834888e7283,Marianne Gordon,Seattle,Foundations,Squad 1,UX Designer,Content Management
+5af86b4130bcb28bf1450621,Curry Stephens,Austin,Healthcare,Squad 5,Frontend Developer,Content Management
+5af86b413bcc767a9b982082,Debbie Bailey,Seattle,UX,Squad 6,Product Manager,ReactJS
+5af86b417b71ef76e6f492af,Dale Mcclain,Austin,Healthcare,Squad 5,Manager,Content Management
+5af86b41f9af578685666db3,Wilkerson Howe,Seattle,Foundations,Squad 2,Manager,Agile
+5af86b41aa9d359385b0a25b,Petersen Giles,Seattle,Foundations,Squad 4,Fullstack Developer,Content Management
+5af86b41d8aa4d337aac8e23,Garner Steele,Seattle,Foundations,Squad 8,Manager,Agile
+5af86b411be6085d0fd9d483,Peters Dixon,New York City,Foundations,Squad 2,Manager,Design Thinking
+5af86b415623fd1294c3b04f,Mullins Palmer,New York City,UX,Squad 2,Fullstack Developer,Ruby
+5af86b411a34e96fb38fc1b5,King Branch,Austin,Foundations,Squad 2,Product Manager,ReactJS
+5af86b4117f8cf1bf8393472,Catalina Barr,San Francisco,Healthcare,Squad 5,Manager,UI
+5af86b413b76ee135a245261,Sarah Craig,New York City,Healthcare,Squad 2,UX Designer,NodeJS
+5af86b41c27b07874aa36f8e,Young Webb,Austin,Foundations,Squad 5,Frontend Developer,ReactJS
+5af86b4129a37c8cbefa4575,Davidson Wilkerson,New York City,UX,Squad 4,Backend Developer,Design Thinking
+5af86b412e518f6fca2262c8,Penny Dale,Austin,Supply Chain,Squad 2,Frontend Developer,UI
+5af86b4121ae78aad9917632,Sara Scott,Austin,UX,Squad 5,Manager,Content Management
+5af86b414e888cef191474eb,Roxie Goodwin,New York City,Supply Chain,Squad 4,Manager,NodeJS
+5af86b41e44c1b246d1589b7,Sadie Taylor,Seattle,Foundations,Squad 5,Backend Developer,Content Management
+5af86b411da240816f01e69d,Estelle Hogan,New York City,UX,Squad 8,Fullstack Developer,UI
+5af86b41241bbaf0041d4e39,Keri Mckay,Seattle,Foundations,Squad 4,Manager,Content Management
+5af86b4138b836672a6ae18a,Wilson Brooks,San Francisco,Foundations,Squad 8,Backend Developer,Design Thinking
+5af86b41f1e1366fd60ab8dd,Reeves Ward,San Francisco,Foundations,Squad 1,Manager,Agile
+5af86b4167eeff76a33d5ddd,Betty Harris,San Francisco,Supply Chain,Squad 3,Backend Developer,NodeJS
+5af86b41f060f1a71cd2e4c3,Sybil Lawson,San Francisco,UX,Squad 4,UX Designer,Content Management
+5af86b41eb39748f7bd81ea0,Landry Murphy,San Francisco,UX,Squad 8,Fullstack Developer,Agile
+5af86b416fce0dae21d20f5d,Maribel Pearson,New York City,Healthcare,Squad 3,UX Designer,NodeJS
+5af86b416be7749e8ad0a51a,Benson Nolan,Seattle,Foundations,Squad 8,Manager,UI
+5af86b417868a3680bc3858c,Copeland Kirk,Seattle,UX,Squad 3,Visual Designer,NodeJS
+5af86b4162137207da39b1dd,Julie Robinson,Austin,Healthcare,Squad 1,UX Designer,Design Thinking
+5af86b4179fe4f14de3ef50f,Acosta Burnett,San Francisco,UX,Squad 1,Backend Developer,NodeJS
+5af86b41900722836cdb51e2,Eunice Beard,New York City,Supply Chain,Squad 3,Visual Designer,UI
+5af86b417bdde9ba16674f4f,Mcdaniel Roman,Austin,Supply Chain,Squad 8,Manager,UI
+5af86b41dea8a5be2532bf18,Noble Acosta,Austin,Supply Chain,Squad 4,Manager,NodeJS
+5af86b410f6703001748ede3,Ayala Roach,Austin,UX,Squad 7,Product Manager,Agile
+5af86b4162e67145a7e73962,Brennan Forbes,Austin,Healthcare,Squad 2,Fullstack Developer,Design Thinking
+5af86b413cab6eec8311255e,Lindsey Heath,Austin,Foundations,Squad 4,Product Manager,ReactJS
+5af86b41f2f34863299de877,Wiley Barnes,Seattle,Foundations,Squad 5,Visual Designer,Agile
+5af86b4143027a53a9599022,Beryl Navarro,Seattle,UX,Squad 5,Fullstack Developer,Agile
+5af86b415015ce764d45c05c,Jocelyn Pitts,New York City,UX,Squad 7,Manager,Content Management
+5af86b417110ad8f1c092c8a,Walls Bentley,New York City,Foundations,Squad 7,Manager,NodeJS
+5af86b41c939f1fbbc9b4a89,Welch Cabrera,San Francisco,UX,Squad 2,Manager,UI
+5af86b41ba8f9d3e55989936,Lorena Patterson,New York City,Supply Chain,Squad 5,Visual Designer,Content Management
+5af86b41392c24510af41f18,Mcfarland Payne,New York City,Healthcare,Squad 2,Product Manager,Agile
+5af86b418e4594c12bb24150,Nita Cherry,New York City,Supply Chain,Squad 6,Manager,Agile
+5af86b4198c43bd890d47a45,Dennis Daugherty,Austin,Foundations,Squad 3,Manager,UI
+5af86b41e71a2c8883c06a63,Cantrell Trujillo,New York City,UX,Squad 3,Manager,Ruby
+5af86b4144685c0bf1b99508,Lenora Reeves,Austin,UX,Squad 5,Product Manager,Ruby
+5af86b41d7ddf30826707626,Cash Holt,San Francisco,Supply Chain,Squad 6,Manager,Ruby
+5af86b41219ebf43039f77a8,Martin Short,Austin,Foundations,Squad 4,UX Designer,Content Management
+5af86b41a69cdb52f6b28a23,Santana York,Austin,Healthcare,Squad 3,Fullstack Developer,Content Management
+5af86b41ed6d5205c3f855a7,Viola Boyer,Austin,Foundations,Squad 3,Product Manager,UI
+5af86b41bc2fae5ba7edf465,Christian Walsh,New York City,Healthcare,Squad 2,Backend Developer,ReactJS
+5af86b41f7929572874361b4,Lucinda Leblanc,New York City,Foundations,Squad 3,Manager,Content Management
+5af86b41c3467af7a0dea030,Blankenship Lloyd,Seattle,Foundations,Squad 1,Frontend Developer,Agile
+5af86b41d1a2d34429457182,Duffy Winters,Seattle,Supply Chain,Squad 8,Frontend Developer,Design Thinking
+5af86b4179bb77c1072b80a7,Santiago Levine,Austin,Supply Chain,Squad 2,Backend Developer,UI
+5af86b41f1328c78717b1195,Carmela Alford,San Francisco,Foundations,Squad 5,Product Manager,Design Thinking
+5af86b41ce717c65182f25cd,Horn Rosa,San Francisco,UX,Squad 6,Frontend Developer,UI
+5af86b4131373308b270a66c,Margie Anthony,New York City,UX,Squad 2,UX Designer,ReactJS
+5af86b4197f6a4e714f4a4d3,Berg Mitchell,New York City,UX,Squad 3,Fullstack Developer,Content Management
+5af86b417a13f56d2b9ed63b,Booth Barrera,Seattle,Foundations,Squad 3,UX Designer,Content Management
+5af86b41bd1c7b7194b5c819,Carolina Hinton,New York City,Foundations,Squad 7,Fullstack Developer,Ruby
+5af86b4141328f98f7e70ada,Norris Benson,Austin,Healthcare,Squad 8,Frontend Developer,Design Thinking
+5af86b4171ede3c9eec6d8a6,Barker Jackson,Austin,Foundations,Squad 4,UX Designer,Design Thinking
+5af86b41d5d74564e9809eff,Earnestine Newton,New York City,Foundations,Squad 3,Backend Developer,Content Management
+5af86b4132f50112d4f73ed0,Blackburn Willis,Austin,Healthcare,Squad 1,Manager,Design Thinking
+5af86b41e3b1c6f19fc5f4d3,Fischer Mccarthy,New York City,Supply Chain,Squad 8,Frontend Developer,NodeJS
+5af86b41aa159bac5a40bb94,Johnston Meyers,New York City,UX,Squad 3,Visual Designer,Agile
+5af86b41b69635540c6cffa4,Bolton Bernard,San Francisco,UX,Squad 1,UX Designer,Ruby
+5af86b4199e6fc9ac10c7e35,Holman Howell,New York City,Healthcare,Squad 6,Fullstack Developer,Agile
+5af86b41aa7d71d79a36e7d5,Briana David,San Francisco,Foundations,Squad 5,Visual Designer,Agile
+5af86b411007276731de4259,Kaufman Santiago,Austin,Supply Chain,Squad 8,Product Manager,ReactJS
+5af86b41ee6ca35f2529e518,Shelly Whitfield,New York City,Foundations,Squad 6,Visual Designer,NodeJS
+5af86b41e71cabf6d56766c9,Inez Holman,New York City,UX,Squad 8,UX Designer,Agile
+5af86b419a8125201ca0b41d,Gay Russell,San Francisco,Supply Chain,Squad 5,Visual Designer,NodeJS
+5af86b4122e72ab57998d674,Anna Meyer,New York City,Healthcare,Squad 3,Frontend Developer,Content Management
+5af86b415b5159226535bd70,Nadine Acevedo,San Francisco,UX,Squad 3,Fullstack Developer,ReactJS
+5af86b41f9ac2289aa6aeb68,Gray Gregory,New York City,UX,Squad 6,Visual Designer,Agile
+5af86b41d01a4b1e9ee21256,Short Ayala,New York City,Foundations,Squad 2,Backend Developer,NodeJS
+5af86b4158d750e31860b467,Lewis Benton,Seattle,Supply Chain,Squad 2,Backend Developer,UI
+5af86b414d6e775f67a05e49,Rhea Deleon,Austin,Healthcare,Squad 1,Backend Developer,Agile
+5af86b41b3ac1b20798d9fb0,Alisha Clark,San Francisco,Foundations,Squad 1,Product Manager,Design Thinking
+5af86b41656567bea94c43b1,Nannie Rice,Seattle,UX,Squad 7,Frontend Developer,Ruby
+5af86b41a9fe65dcfa90d199,Dollie Hicks,Austin,Healthcare,Squad 4,Fullstack Developer,UI
+5af86b4175d7bb521b158ee2,Chambers Bishop,San Francisco,Healthcare,Squad 5,Product Manager,Design Thinking
+5af86b415d70ef9d5a3da32f,Hess Wade,Seattle,Healthcare,Squad 3,UX Designer,UI
+5af86b41c92c036141f5f2a4,Ellison Patrick,New York City,Supply Chain,Squad 5,Visual Designer,NodeJS
+5af86b41b531dca051ca89dd,Jeanne Walters,Austin,UX,Squad 8,Product Manager,NodeJS
+5af86b41a28bee9cfcc85c6b,Mooney Morrison,Austin,Healthcare,Squad 2,Fullstack Developer,Content Management
+5af86b41a26e304aa32d85df,Francisca Mcintosh,Seattle,Supply Chain,Squad 3,Frontend Developer,UI
+5af86b410458d213c670a0f6,Pearson Burris,Seattle,Healthcare,Squad 5,UX Designer,ReactJS
+5af86b4141aac0aa434e1494,Dawn Middleton,Austin,Foundations,Squad 1,Backend Developer,UI
+5af86b41ea87f84b8f028021,Jenny Olsen,Seattle,Foundations,Squad 1,Product Manager,Design Thinking
+5af86b417311f6bf455e003f,Velazquez Davidson,San Francisco,Foundations,Squad 3,Visual Designer,Content Management
+5af86b418671bee26b92d155,Miller Glass,New York City,Foundations,Squad 2,Visual Designer,UI
+5af86b4104e7c3d560d21150,Butler Sparks,Seattle,Healthcare,Squad 8,Manager,Ruby
+5af86b411c5154e39bf8492b,Berta Riddle,San Francisco,Healthcare,Squad 4,Visual Designer,Content Management
+5af86b417edb98462f8b0d09,Christi Kim,San Francisco,Healthcare,Squad 2,Fullstack Developer,NodeJS
+5af86b412b12110e8258e8ed,Chelsea Rose,San Francisco,Healthcare,Squad 2,Fullstack Developer,Content Management
+5af86b41d0a5b6d5c6b9b908,Ronda Mcbride,San Francisco,Foundations,Squad 8,Fullstack Developer,NodeJS
+5af86b41ac73122d1aaa5314,Horne Mack,San Francisco,Healthcare,Squad 3,Backend Developer,Ruby
+5af86b417a587e7868dfae08,Callahan Osborn,San Francisco,Foundations,Squad 4,UX Designer,Design Thinking
+5af86b4125e79e9393df9fe3,Lynn Hansen,New York City,Healthcare,Squad 5,Fullstack Developer,NodeJS
+5af86b411dec2ad4e4ba1672,Barrett Farrell,San Francisco,UX,Squad 2,Visual Designer,ReactJS
+5af86b41d442d7461876f360,Dyer Best,Austin,Healthcare,Squad 3,Manager,Agile
+5af86b411dcb1e9fc558c214,Kerr Rhodes,San Francisco,Foundations,Squad 8,Fullstack Developer,NodeJS
+5af86b411c748f388d317532,Maricela Kent,New York City,Healthcare,Squad 6,Manager,Content Management
+5af86b41fa80729c55f3e36e,Kari Mann,Seattle,Supply Chain,Squad 5,Product Manager,Content Management
+5af86b41786f3a4b2167bea2,Crane Gutierrez,New York City,Supply Chain,Squad 6,Frontend Developer,Agile
+5af86b41f0bac604d608f0f4,Morrow Frank,San Francisco,UX,Squad 8,Visual Designer,Ruby
+5af86b41248f4cdb17e6397d,Hooper Woodward,New York City,UX,Squad 7,Product Manager,ReactJS
+5af86b418510b65ba0c570a0,Hubbard Green,Austin,Healthcare,Squad 2,Product Manager,Design Thinking
+5af86b411cb0938638c72e8f,Odonnell Carr,Seattle,Supply Chain,Squad 5,Fullstack Developer,ReactJS
+5af86b41194ec079bdbc4de6,Knowles Wilkins,New York City,Supply Chain,Squad 2,Frontend Developer,ReactJS
+5af86b41bfab1e56c62028e7,Griffin Buckley,New York City,Healthcare,Squad 4,UX Designer,Design Thinking
+5af86b418bf20304f65dfaa3,Nikki Aguilar,San Francisco,Healthcare,Squad 1,Fullstack Developer,NodeJS
+5af86b41b2315f9766af0f11,Woodward Shepherd,San Francisco,Foundations,Squad 1,Product Manager,Design Thinking
+5af86b41f3345be2affa35b6,Carrie Maxwell,Seattle,Healthcare,Squad 5,Visual Designer,NodeJS
+5af86b41c4393163ee02880b,Ella Downs,Seattle,Foundations,Squad 6,Frontend Developer,ReactJS
+5af86b41546bde49041bf0b8,Marci Solis,San Francisco,Foundations,Squad 4,Manager,Content Management
+5af86b41311e239d0dd52983,Little Foreman,New York City,Foundations,Squad 3,Backend Developer,Agile
+5af86b411911e7594160eb20,Whitehead Potter,Seattle,UX,Squad 2,Backend Developer,Design Thinking
+5af86b417ddcfe736e50b1f1,Pacheco Adkins,San Francisco,Foundations,Squad 7,Backend Developer,ReactJS
+5af86b4131ed0bf47d574ee4,Walter Sellers,New York City,Healthcare,Squad 1,Backend Developer,Content Management
+5af86b410432afafe1217106,Madeleine Dawson,Seattle,UX,Squad 2,UX Designer,UI
+5af86b410564841a3804ee4d,Lyons Schroeder,Seattle,Foundations,Squad 3,Frontend Developer,Agile
+5af86b416aa4b44357e12fdb,Morales Nash,New York City,UX,Squad 8,UX Designer,UI
+5af86b41e9887486a61a18c0,Millie Ferguson,New York City,Supply Chain,Squad 7,Visual Designer,Ruby
+5af86b4194d206728f7d9f49,Genevieve Dillard,Seattle,Healthcare,Squad 1,Backend Developer,Design Thinking
+5af86b41eface0ed3ec80233,Selena Puckett,San Francisco,Supply Chain,Squad 8,Manager,Ruby
+5af86b4188e2933a8f0d66ce,West Bullock,Austin,Supply Chain,Squad 3,Manager,Content Management
+5af86b41e41bcfa463e9c662,Wright Vaughan,New York City,Healthcare,Squad 7,UX Designer,Content Management
+5af86b411fdd64ddcdf7cefb,Ginger Bowen,Austin,Foundations,Squad 2,Fullstack Developer,Design Thinking
+5af86b41a28a5b82397624a4,Stephens Cross,San Francisco,Supply Chain,Squad 3,Product Manager,Design Thinking
+5af86b419f8b90c85d1e194b,Mendoza Sandoval,New York City,Foundations,Squad 7,Manager,ReactJS
+5af86b41c66d08daea365b7e,Frye Hurley,Austin,Supply Chain,Squad 6,Frontend Developer,UI
+5af86b41d8392437280f3eea,Nash Gay,Austin,UX,Squad 7,Visual Designer,UI
+5af86b411f84c71cb951327e,Rogers Henry,Austin,Healthcare,Squad 7,Visual Designer,NodeJS
+5af86b41916763ae973542ed,Annie Vargas,Seattle,Foundations,Squad 2,Visual Designer,Content Management
+5af86b41cb152415d2b4dbf1,Dorthy Grant,Austin,UX,Squad 4,Frontend Developer,Agile
+5af86b414a36149f9c89efef,Faulkner Dickerson,New York City,Foundations,Squad 1,Product Manager,ReactJS
+5af86b41770513bcbb9a988c,Drake Woodard,San Francisco,Supply Chain,Squad 5,Visual Designer,UI
+5af86b4108b818ddfb9898f9,Josefina Spencer,Seattle,Supply Chain,Squad 8,Product Manager,Content Management
+5af86b41581013fe8e2e63eb,Melendez Hayden,San Francisco,UX,Squad 1,Frontend Developer,Content Management
+5af86b41a180ed52adb68626,Mejia Donovan,Austin,Healthcare,Squad 6,Product Manager,NodeJS
+5af86b410e4cc176bf0a8b11,Connie Evans,Seattle,Healthcare,Squad 3,UX Designer,ReactJS
+5af86b41dacd3ebf35fa00a6,Sue Casey,New York City,Healthcare,Squad 1,Product Manager,ReactJS
+5af86b416ef9b543aba4aaff,Morris Hurst,Seattle,Foundations,Squad 7,Backend Developer,Design Thinking
+5af86b4101cc102edbb4a163,Cameron Tate,San Francisco,Foundations,Squad 7,Backend Developer,Agile
+5af86b41b6160f5c793fde87,Tisha Rocha,San Francisco,Foundations,Squad 6,Frontend Developer,NodeJS
+5af86b415ab16d7a7cb93bc3,Hilary Burks,San Francisco,Supply Chain,Squad 7,Visual Designer,Content Management
+5af86b41a9feb8c5796d86ed,Lolita Gaines,Austin,Supply Chain,Squad 7,Manager,Content Management
+5af86b41f2fb95ae940ae01d,Lorene Love,Austin,Supply Chain,Squad 3,Frontend Developer,Design Thinking
+5af86b41daa842b873e0db23,Tammy Jordan,Seattle,UX,Squad 5,Manager,Agile
+5af86b41d0e628358ccdd7a7,Levy Hewitt,Seattle,Supply Chain,Squad 1,Visual Designer,Ruby
+5af86b419f8055fa1a339c3c,Mathews Kane,Seattle,UX,Squad 5,Product Manager,Design Thinking
+5af86b410326f7613d3f0304,Dawson Harding,Austin,Foundations,Squad 2,Frontend Developer,Ruby
+5af86b415799dd44d0286f9f,Lula Nunez,Austin,Healthcare,Squad 3,UX Designer,Agile
+5af86b410c582ed08b0a7eb3,Darlene Dalton,Seattle,Healthcare,Squad 6,Product Manager,Design Thinking
+5af86b41b4d16e959eb6745e,Merritt Randall,San Francisco,UX,Squad 5,Frontend Developer,ReactJS
+5af86b418e5ed2d0e65d316c,Berry May,San Francisco,UX,Squad 3,Visual Designer,Design Thinking
+5af86b411d60cf8c2b49a761,Green Butler,Austin,Supply Chain,Squad 7,Product Manager,Content Management
+5af86b41df9566e3be5fa2ee,Sexton Lowery,Seattle,UX,Squad 1,Backend Developer,Ruby
+5af86b41039916661fad7bee,Bernadine Wilder,San Francisco,UX,Squad 6,Product Manager,Agile
+5af86b417c4951583bb64d2d,Liz Stafford,New York City,UX,Squad 2,Backend Developer,Agile
+5af86b415557d5acdb3f33d1,Minerva Castaneda,Seattle,Supply Chain,Squad 2,Manager,ReactJS
+5af86b4116b1f8dd559a20bf,Simon Johnston,Seattle,UX,Squad 8,Visual Designer,UI
+5af86b41c6f1d81c28900db6,Katheryn Mendez,San Francisco,Supply Chain,Squad 1,Fullstack Developer,Agile
+5af86b41ccce48c97d96330b,Glenna Colon,Seattle,Healthcare,Squad 8,UX Designer,Content Management
+5af86b415ad3ae9e152e3ae3,Katina Waller,Austin,Supply Chain,Squad 2,Frontend Developer,Ruby
+5af86b41b38b0c12f33b53bb,Greene Spence,New York City,Foundations,Squad 5,Visual Designer,Content Management
+5af86b41148ee47205fdf786,Eaton Williamson,Austin,UX,Squad 3,Visual Designer,Design Thinking
+5af86b41bc95de50f859cf02,Rosanne Odom,New York City,UX,Squad 8,Fullstack Developer,NodeJS
+5af86b41c317409776fc43f1,Leticia Baldwin,Austin,Foundations,Squad 7,Frontend Developer,ReactJS
+5af86b4150efa52d03c00c7a,York Waters,Seattle,UX,Squad 7,Fullstack Developer,ReactJS
+5af86b41a85b12dc466d7708,Parker Harrington,Seattle,Healthcare,Squad 6,UX Designer,Design Thinking
+5af86b41cd6f355fd4baf126,Kristina Smith,New York City,Healthcare,Squad 2,Manager,NodeJS
+5af86b4134261264fce86fb5,Karen Larson,Seattle,UX,Squad 1,UX Designer,UI
+5af86b41946843ea7a3f5c0e,Hunt Richard,New York City,Healthcare,Squad 3,Visual Designer,Design Thinking
+5af86b41db2d5f35526b35ae,Dixon Hess,San Francisco,Healthcare,Squad 4,Fullstack Developer,Ruby
+5af86b41f080a5efb31e8025,Padilla Mckinney,Seattle,Healthcare,Squad 5,Manager,Content Management
+5af86b41862118092cdb4a00,Dorsey Hatfield,New York City,UX,Squad 1,Manager,UI
+5af86b4184080f1fd7055cf0,Lucia Wolf,Seattle,Supply Chain,Squad 5,UX Designer,Content Management
+5af86b411c67b8684506d19c,Dale Mcconnell,San Francisco,Foundations,Squad 8,Product Manager,Ruby
+5af86b41daf4b1a7c660872c,Tommie Boyle,New York City,Supply Chain,Squad 6,Fullstack Developer,Content Management
+5af86b417365fbbb4ff466da,Ora Dudley,Austin,UX,Squad 1,Frontend Developer,Agile
+5af86b41a5c3f27c23a979e3,Sheryl Dennis,New York City,Foundations,Squad 1,Backend Developer,Agile
+5af86b41abb80dc270b716bd,Esperanza Lee,Seattle,Foundations,Squad 7,Frontend Developer,Agile
+5af86b41974d98e7a21b7903,Winters Travis,New York City,Supply Chain,Squad 1,Backend Developer,Agile
+5af86b412d8db4e6c941921a,Kennedy French,Austin,Foundations,Squad 4,Fullstack Developer,Agile
+5af86b410fda2f13b817cfd8,Lilian Griffin,Seattle,Foundations,Squad 5,Frontend Developer,Agile
+5af86b41a619be42fa433dcd,Lily Anderson,Seattle,UX,Squad 1,Visual Designer,Design Thinking
+5af86b41ffe1c9b271e2e9d4,Brock Holmes,New York City,UX,Squad 5,UX Designer,UI
+5af86b41233007767f8ee0ab,Juana Sawyer,Seattle,UX,Squad 8,UX Designer,NodeJS
+5af86b41a8746f7ddab0ccc6,Kelly Quinn,Seattle,Foundations,Squad 8,Backend Developer,Agile
+5af86b41fa5d77acdeb0e1a7,Moody Sanford,New York City,Healthcare,Squad 1,Manager,Content Management
+5af86b41cf16cec4f8ee0094,Kinney Hendrix,San Francisco,Foundations,Squad 3,Visual Designer,Content Management
+5af86b41e55e5e6dd1b4156d,Mary Cruz,New York City,Foundations,Squad 3,Manager,Content Management
+5af86b41106a0eed37544015,Maxine English,Seattle,UX,Squad 6,Visual Designer,ReactJS
+5af86b41be73dc35cce0297b,Nellie House,New York City,Supply Chain,Squad 8,Frontend Developer,NodeJS
+5af86b41e309f30150a9c416,Haney Foley,Austin,Supply Chain,Squad 1,Visual Designer,Ruby
+5af86b411cac91bc4ad24a5a,Rivera Snyder,San Francisco,Healthcare,Squad 2,Product Manager,Agile
+5af86b41a0ade10d4111f02a,Gena Britt,Seattle,Supply Chain,Squad 2,Backend Developer,Ruby
+5af86b4124ec0bac80f72876,Regina Jacobson,New York City,Supply Chain,Squad 4,Manager,UI
+5af86b412271dad7d75678cf,Walton Stone,San Francisco,Healthcare,Squad 5,Frontend Developer,ReactJS
+5af86b418fc7f212aba3e166,Lara Mercado,Seattle,Foundations,Squad 2,Frontend Developer,ReactJS
+5af86b410cfe0bf0e83d7a3f,Janet Weiss,San Francisco,Healthcare,Squad 1,Frontend Developer,Design Thinking
+5af86b411639f7d28e62bd28,Gutierrez Sexton,New York City,Foundations,Squad 5,Product Manager,Content Management
+5af86b41c83e53b476619096,Carla Wheeler,Seattle,UX,Squad 3,Product Manager,ReactJS
+5af86b411c282d2f50f6d09f,Ross Wolfe,Seattle,Healthcare,Squad 4,Visual Designer,ReactJS
+5af86b41b6fd108fb33af787,Terry Zimmerman,Seattle,Healthcare,Squad 7,Manager,Content Management
+5af86b41da235c6c350cda3b,Georgia Conley,Seattle,Healthcare,Squad 7,Frontend Developer,Agile
+5af86b4102cd51edcdea33a1,Cole Ross,San Francisco,Foundations,Squad 6,Fullstack Developer,NodeJS
+5af86b41640994b035dca09b,Daniel Day,New York City,Healthcare,Squad 5,UX Designer,Design Thinking
+5af86b4190311734e7b945ad,Carolyn Workman,Austin,Supply Chain,Squad 3,Product Manager,ReactJS
+5af86b41ce04211a0456091d,Cline Lindsay,New York City,Foundations,Squad 2,UX Designer,Content Management
+5af86b41e8ff3a8019f478b0,Adrian Charles,New York City,Foundations,Squad 4,Frontend Developer,NodeJS
+5af86b415cb90eb9396d832d,Boyer Mayer,Seattle,Foundations,Squad 7,Manager,Content Management
+5af86b41348b28bbadeab15a,Frances Rodriquez,Seattle,Healthcare,Squad 3,Fullstack Developer,Agile
+5af86b415de7ca8b42088b57,Lessie Banks,New York City,Healthcare,Squad 2,Manager,Ruby
+5af86b41e8fb45e8e408d566,Herminia Mclean,Seattle,UX,Squad 8,Fullstack Developer,Design Thinking
+5af86b41d2c71ba2bc3fd2d4,Brandy Parsons,New York City,Healthcare,Squad 7,Manager,ReactJS
+5af86b419293275766658c3b,Bernard Cole,San Francisco,Supply Chain,Squad 8,Visual Designer,Content Management
+5af86b41c80848df53505cfe,Mcintyre Vance,Seattle,Foundations,Squad 5,Manager,UI
+5af86b417831409787d408d9,Castaneda Hahn,San Francisco,Supply Chain,Squad 8,Backend Developer,ReactJS
+5af86b4131f86d3b3826800e,Clements Roberts,San Francisco,Foundations,Squad 8,Visual Designer,Design Thinking
+5af86b41a2ec7b7a5057dc50,Jeannine Francis,New York City,Foundations,Squad 4,Backend Developer,NodeJS
+5af86b41452123a8475b2d27,Atkinson Church,Austin,Supply Chain,Squad 5,Fullstack Developer,Agile
+5af86b41c2f28fcf465fe83a,Barton Black,Seattle,Supply Chain,Squad 3,Fullstack Developer,Content Management
+5af86b419d9f1ead651aafe2,Pitts Oneal,Seattle,Healthcare,Squad 4,Product Manager,UI
+5af86b418ba660b889d9b944,Johnson Allison,Austin,Supply Chain,Squad 8,UX Designer,UI
+5af86b417157a94227f289e0,Harmon Mccray,New York City,Healthcare,Squad 2,Fullstack Developer,ReactJS
+5af86b41e1726362a246714e,Ramos Dorsey,New York City,Supply Chain,Squad 3,Backend Developer,ReactJS
+5af86b41ef40f86bb57035f9,Anastasia Fry,Austin,UX,Squad 1,Frontend Developer,NodeJS
+5af86b41a6d36e5b00e7e160,Hallie Frederick,San Francisco,Healthcare,Squad 6,Backend Developer,NodeJS
+5af86b41f58c665156fe9f38,Frazier Watts,New York City,Healthcare,Squad 3,Visual Designer,ReactJS
+5af86b4114676a97e98fa71b,Barbra Wooten,San Francisco,Foundations,Squad 4,Fullstack Developer,UI
+5af86b4135bdd2617dd087c0,Rachel Marks,New York City,Healthcare,Squad 5,Frontend Developer,Design Thinking
+5af86b4155b3e1292cf8c4b4,Velez Bryant,Seattle,Foundations,Squad 2,Visual Designer,NodeJS
+5af86b4155cf8dfe6f5e3d9b,Richardson Dean,Seattle,Foundations,Squad 6,Visual Designer,NodeJS
+5af86b411bb2f1f6c8fddc54,Calderon Blackwell,New York City,Foundations,Squad 7,UX Designer,UI
+5af86b419f451231afd3e410,Gilmore Clarke,Austin,Supply Chain,Squad 1,Frontend Developer,ReactJS
+5af86b41631bfd23880e73f5,Crystal Burt,New York City,Healthcare,Squad 1,UX Designer,UI
+5af86b41e7395215927622e2,Owen Keith,New York City,Supply Chain,Squad 2,UX Designer,NodeJS
+5af86b41f50732c253a794d4,Isabella Hodges,San Francisco,UX,Squad 5,Product Manager,ReactJS
+5af86b4159defd271028041a,Kitty Whitaker,New York City,UX,Squad 3,Manager,Agile
+5af86b41a80318bc15f4b69f,Verna Sykes,New York City,Foundations,Squad 6,Visual Designer,ReactJS
+5af86b415d891ae761402a58,Hendrix Ortiz,Seattle,Foundations,Squad 8,Backend Developer,UI
+5af86b41685ad66989137924,Perkins Durham,New York City,Healthcare,Squad 7,UX Designer,Agile
+5af86b41e4fc6c159cf6d271,Earline Gilliam,Seattle,Foundations,Squad 3,Backend Developer,UI
+5af86b413a6eb0683692a57b,Chaney Trevino,Austin,UX,Squad 1,UX Designer,Ruby
+5af86b41e497cfc9c03e68c6,Abby Parker,Seattle,Supply Chain,Squad 3,Product Manager,UI
+5af86b419a3eeb59ca201a46,Terri Moss,New York City,Foundations,Squad 3,UX Designer,UI
+5af86b41ab8905c3b4156083,Tate Sweeney,New York City,Supply Chain,Squad 5,Frontend Developer,Design Thinking
+5af86b411e88c9a70f1550b4,Angelique Gray,New York City,Healthcare,Squad 5,Manager,ReactJS
+5af86b41946280e8c592e0d3,Tricia Carlson,New York City,Supply Chain,Squad 1,Backend Developer,Design Thinking
+5af86b410f5385dcdb161284,Pauline Hutchinson,Austin,Foundations,Squad 1,Backend Developer,UI
+5af86b41b85940be95573836,Sophie Swanson,Austin,Foundations,Squad 1,UX Designer,Content Management
+5af86b4167a0053565b4ac24,Robin Wong,Seattle,Foundations,Squad 4,Product Manager,Agile
+5af86b41b45cd8246dbecacb,Bowers Rios,Seattle,Supply Chain,Squad 2,Fullstack Developer,UI
+5af86b411c8ab2d4f235bd3e,Lowery Sosa,Austin,UX,Squad 8,Manager,NodeJS
+5af86b41c361a37bb26fd4f4,Adela Schwartz,New York City,Supply Chain,Squad 4,Product Manager,Design Thinking
+5af86b418371c8854f4deff9,Dunlap Hopkins,San Francisco,Supply Chain,Squad 2,Frontend Developer,Content Management
+5af86b41b86811eab89f4e1a,Angeline Moody,San Francisco,Healthcare,Squad 7,Backend Developer,Design Thinking
+5af86b414191b2bfed23600e,Phyllis Gallagher,Seattle,Supply Chain,Squad 4,Product Manager,Ruby
+5af86b41ada3673ac3abc593,Maggie Hartman,San Francisco,Healthcare,Squad 6,Fullstack Developer,Agile
+5af86b41b4186ef5ccdcfa2f,Marguerite Bean,San Francisco,Healthcare,Squad 5,Visual Designer,Design Thinking
+5af86b41d40da55ff8d2ca16,Jordan Yang,Austin,UX,Squad 5,Visual Designer,Agile
+5af86b4104c1f7dfa51daa59,Samantha Collier,New York City,Supply Chain,Squad 4,Frontend Developer,UI
+5af86b410a5c170e7afb88ca,Sheree Rogers,San Francisco,Supply Chain,Squad 6,Visual Designer,Agile
+5af86b41aff295692971f0d0,Cooper Miranda,Austin,Healthcare,Squad 1,Fullstack Developer,NodeJS
+5af86b413eb84c7db2afe9ca,Kenya Perkins,New York City,Healthcare,Squad 5,Frontend Developer,UI
+5af86b4155790fdebd960dec,Hernandez Parrish,New York City,Healthcare,Squad 7,Product Manager,NodeJS
+5af86b41235f490dcb551540,Jannie Velez,Austin,UX,Squad 6,Frontend Developer,Ruby
+5af86b41c3ad7aa4e4a016a1,Howard Powers,Seattle,Healthcare,Squad 8,Product Manager,Content Management
+5af86b41a5da4a18d12118fa,Jane Atkinson,Austin,Supply Chain,Squad 6,Visual Designer,NodeJS
+5af86b4181c924e36faa77e2,Shawna Brock,Austin,Supply Chain,Squad 4,Visual Designer,UI
+5af86b41ec2eefa13ed27371,Cornelia Beach,Austin,Healthcare,Squad 3,Visual Designer,Design Thinking
+5af86b410175ac6f3dc0733f,Webster Baxter,New York City,UX,Squad 5,Fullstack Developer,UI
+5af86b416e8be199db53ba58,Rosetta Luna,Austin,UX,Squad 6,Backend Developer,NodeJS
+5af86b4157901461af9cca46,Fuller Thornton,San Francisco,Foundations,Squad 5,Fullstack Developer,Agile
+5af86b4196f8ac4c75c5ee1c,Webb James,New York City,Foundations,Squad 8,Manager,ReactJS
+5af86b411953b0e949ff1263,Ingrid Osborne,New York City,Supply Chain,Squad 6,Product Manager,NodeJS
+5af86b41267f93c2d3428890,Tyson Martin,Seattle,Supply Chain,Squad 5,Manager,NodeJS
+5af86b41981b8eefbea81faf,Karla Coffey,San Francisco,Foundations,Squad 8,Visual Designer,UI
+5af86b41962a4be24c73377f,Elma Small,New York City,Supply Chain,Squad 7,Manager,NodeJS
+5af86b41f3be019f04b3182d,Wallace Berry,Austin,UX,Squad 2,Frontend Developer,Ruby
+5af86b41ed44d45e1cf3e0a6,Flowers Harrell,San Francisco,Foundations,Squad 2,Manager,ReactJS
+5af86b418e777359470d9dd5,Olive Price,Seattle,Supply Chain,Squad 2,UX Designer,ReactJS
+5af86b41bc479404f07b7a0a,Tran Cooper,New York City,UX,Squad 8,Frontend Developer,ReactJS
+5af86b41938b27e0339722ec,Warner Briggs,Austin,Foundations,Squad 7,Manager,Agile
+5af86b417b251a7de6c106ea,Cecilia Welch,New York City,Healthcare,Squad 4,UX Designer,Agile
+5af86b41527e8f78aa59c62e,Vickie Miller,Austin,Healthcare,Squad 7,Product Manager,Ruby
+5af86b4156b8377bda6a93d3,Rebecca Austin,New York City,Supply Chain,Squad 7,Backend Developer,Content Management
+5af86b41d0e856f858d254c0,Christa Suarez,San Francisco,Supply Chain,Squad 5,Backend Developer,Design Thinking
+5af86b41d90aaf26256703ea,Pierce Dunn,San Francisco,Healthcare,Squad 3,Product Manager,Design Thinking
+5af86b41add46dbb3c6da6e9,Robinson Henderson,New York City,Supply Chain,Squad 4,Backend Developer,Ruby
+5af86b41917e588953d52fc1,Horton Roy,San Francisco,Supply Chain,Squad 8,Visual Designer,Design Thinking
+5af86b415e692af14447a738,Duncan Castillo,Austin,Healthcare,Squad 6,Visual Designer,ReactJS
+5af86b412422cfa9a05c96c8,Aisha Malone,San Francisco,Healthcare,Squad 8,Frontend Developer,ReactJS
+5af86b41d63302daaa0545c8,Romero Dejesus,Austin,Foundations,Squad 4,Fullstack Developer,Agile
+5af86b41dd5af2c9de84d3aa,Fuentes Burch,Austin,Foundations,Squad 5,Frontend Developer,UI
+5af86b413864b1e550488505,Chris Chapman,New York City,UX,Squad 1,Manager,Design Thinking
+5af86b41965e6e3b68a6591d,Wilma Collins,San Francisco,Supply Chain,Squad 5,Visual Designer,Design Thinking
+5af86b41fd5ce203ddea4138,Kirk West,New York City,Supply Chain,Squad 1,Frontend Developer,NodeJS
+5af86b415f985c7612324b4d,Powers Crosby,Austin,Healthcare,Squad 3,Frontend Developer,NodeJS
+5af86b419927265f8566357a,James Garner,Austin,Supply Chain,Squad 3,Frontend Developer,UI
+5af86b41abfe1e1ce535d43c,Farmer Aguirre,Austin,Foundations,Squad 4,Frontend Developer,UI
+5af86b4134a104655a998337,Nichols Franklin,New York City,UX,Squad 4,Product Manager,UI
+5af86b41bbf691c522134db4,Terrell Schmidt,Seattle,Healthcare,Squad 6,UX Designer,Design Thinking
+5af86b4142494ddaa6104822,Geneva Hopper,New York City,UX,Squad 4,Fullstack Developer,UI
+5af86b4117f08f892a1403c1,Margery Decker,New York City,UX,Squad 5,Product Manager,Agile
+5af86b41654a5f6a5d1b061b,Ofelia Fletcher,Seattle,Foundations,Squad 6,Backend Developer,Content Management
+5af86b414111e0c0065cbd7f,Cooke Franco,New York City,Healthcare,Squad 8,Visual Designer,Content Management
+5af86b4118c263045e48d03c,Chen Hester,San Francisco,UX,Squad 4,Fullstack Developer,Agile
+5af86b41d236e44cb0ab17bb,Cassie Ryan,Austin,Foundations,Squad 7,Product Manager,Design Thinking
+5af86b41fcf57e3811eb1866,Millicent Carson,San Francisco,Supply Chain,Squad 3,Frontend Developer,UI
+5af86b41450a085ff45c95e6,Thelma Simmons,New York City,Healthcare,Squad 3,Backend Developer,Agile
+5af86b41df1dd3f5f71631d7,Lucas Sears,Austin,Supply Chain,Squad 4,Backend Developer,UI
+5af86b414b29429364ea65a3,Osborn Bauer,Austin,Foundations,Squad 7,UX Designer,ReactJS
+5af86b413bc90b7c6e1ad834,Gayle Perez,San Francisco,Supply Chain,Squad 7,Product Manager,Design Thinking
+5af86b41008ca3b8d6f57fb7,Solomon Rosales,San Francisco,Foundations,Squad 6,Manager,Ruby
+5af86b4198ff209c3d0dfd55,Savannah Owen,San Francisco,UX,Squad 5,Visual Designer,UI
