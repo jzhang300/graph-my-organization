@@ -1,0 +1,24 @@
+{
+  "name": "watson-org-viz",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "d3": "^4.11.0",
+    "deep-rename-keys": "^0.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "jest-cli": "^21.2.1"
+  }
+}
