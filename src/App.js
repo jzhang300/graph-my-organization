@@ -10,12 +10,12 @@ class App extends Component {
     fullData: [],
     fullHierarchies: [],
     data: [],
-    hierarchies: ["Product Family", "Skills"],
+    hierarchies: ["Product", "Skills"],
     flag: false,
     hierarchyString: "",
     colorRange: ["#8ee9d4", "#008673"],
     leafColor: "#fff",
-    sortType: "ascending",
+    sortType: "descending",
     diameter: 680
   };
   componentDidMount() {
@@ -38,7 +38,9 @@ class App extends Component {
       this.setState({
         data: transformation,
         fullData: transformation,
-        fullHierarchies
+        fullHierarchies: fullHierarchies.filter(
+          hierarchy => hierarchy !== "_id"
+        )
       });
     });
   }
@@ -50,55 +52,45 @@ class App extends Component {
           <div className="container--side">
             <Filters
               style={{ height: `${this.state.diameter}px` }}
-              onHierarchiesChanged={e => {
-                this.setState({ hierarchyString: e.target.value });
-              }}
-              onSubmitHierarchies={() => {
-                this.setState(prevState => ({
-                  hierarchies: JSON.parse(prevState.hierarchyString)
-                }));
-              }}
-              onButtonClick={() => {
-                if (this.state.flag) {
-                  this.setState({
-                    data: this.state.fullData,
-                    hierarchies: ["Location", "Product Family"],
-                    flag: false
-                  });
-                } else {
-                  this.setState({
-                    data: this.state.fullData.filter(
-                      item => item["Product Family"] !== "Conversation"
-                    ),
-                    hierarchies: ["Location", "Product Family"],
-                    flag: true
-                  });
-                }
-              }}
-              onLeafColorChange={e => {
-                this.setState({ leafColor: e.target.value });
-              }}
-              onBaseColorChange={e => {
+              fullHierarchies={this.state.fullHierarchies}
+              onMoveUpHierarchy={(e, hierarchy, index) => {
+                const swappedHierarchies = [...this.state.hierarchies];
+                [swappedHierarchies[index], swappedHierarchies[index - 1]] = [
+                  swappedHierarchies[index - 1],
+                  swappedHierarchies[index]
+                ];
                 this.setState({
-                  colorRange: [e.target.value, this.state.colorRange[1]]
+                  hierarchies: swappedHierarchies
                 });
               }}
-              onTopColorChange={e => {
+              onMoveDownHierarchy={(e, hierarchy, index) => {
+                const swappedHierarchies = [...this.state.hierarchies];
+                [swappedHierarchies[index], swappedHierarchies[index + 1]] = [
+                  swappedHierarchies[index + 1],
+                  swappedHierarchies[index]
+                ];
                 this.setState({
-                  colorRange: [this.state.colorRange[0], e.target.value]
+                  hierarchies: swappedHierarchies
                 });
               }}
-              onArrangementChange={e => {
-                this.setState({ sortType: e.target.value });
+              onPromoteHierarchy={(e, hierarchy, index) => {
+                this.setState({
+                  hierarchies: [...this.state.hierarchies, hierarchy]
+                });
+              }}
+              onDemoteHierarchy={(e, hierarchy, index) => {
+                this.setState({
+                  hierarchies: this.state.hierarchies.filter(
+                    item => item !== hierarchy
+                  )
+                });
               }}
               showLeaves={this.state.showLeaves}
+              hierarchies={this.state.hierarchies}
               onToggleLeaves={e => {
                 this.setState(prevState => ({
                   showLeaves: !prevState.showLeaves
                 }));
-              }}
-              onSizeChange={e => {
-                this.setState({ diameter: e.target.value });
               }}
             />
           </div>

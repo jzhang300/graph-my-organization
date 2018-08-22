@@ -10,7 +10,7 @@ html {
 
 *:before,
 *:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -502,7 +502,7 @@ body {
 }
 .container--side {
   height: 100%;
-  width: 10rem;
+  width: 14rem;
 }
 
 .label {
@@ -536,7 +536,7 @@ body {
   background-color: #ffb000;
   color: #333;
   display: inline-block;
-  padding: .2em .5em .3em;
+  padding: 0.2em 0.5em 0.3em;
 }
 
 .label--text:not(:first-child):not(:last-child) {
@@ -557,4 +557,8 @@ body {
   height: 100%;
   background-color: #f8fafa;
   text-align: left;
+}
+
+.filters--draggable-list-item {
+  display: flex;
 }
