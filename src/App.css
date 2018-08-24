@@ -562,3 +562,13 @@ body {
 .filters--draggable-list-item {
   display: flex;
 }
+
+.filters--list-tag {
+}
+
+.filters--list-tag_dragging {
+}
+
+.filters--list_is-dragged-on {
+  background-color: red;
+}

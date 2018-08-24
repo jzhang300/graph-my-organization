@@ -16,7 +16,8 @@ class App extends Component {
     colorRange: ["#8ee9d4", "#008673"],
     leafColor: "#fff",
     sortType: "descending",
-    diameter: 680
+    diameter: 680,
+    isDemoting: false
   };
   componentDidMount() {
     d3.csv("data/result.csv", (err, data) => {
@@ -47,7 +48,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div
+        className="app"
+        onDragEnd={() => {
+          this.setState({
+            isDemoting: false
+          });
+        }}
+      >
         <div className="container">
           <div className="container--side">
             <Filters
@@ -85,6 +93,22 @@ class App extends Component {
                   )
                 });
               }}
+              onDemotingDragOver={e => {
+                console.dir(e.target);
+                if (!this.state.isDemoting) {
+                  this.setState({
+                    isDemoting: true
+                  });
+                }
+                console.log(this.state.isDemoting);
+              }}
+              onDemotingDragEnd={() => {
+                this.setState({
+                  isDemoting: false
+                });
+                console.log(this.state.isDemoting);
+              }}
+              isDemoting={this.state.isDemoting}
               showLeaves={this.state.showLeaves}
               hierarchies={this.state.hierarchies}
               onToggleLeaves={e => {

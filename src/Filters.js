@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import { noop } from "./utils";
 
 const filters = ({
@@ -11,6 +12,9 @@ const filters = ({
   onPromoteHierarchy,
   onDemoteHierarchy,
   onToggleLeaves,
+  onDemotingDragOver,
+  onDemotingDragEnd,
+  isDemoting,
   ...props
 }) => (
   <div className="filters" {...props}>
@@ -18,11 +22,10 @@ const filters = ({
     <ol>
       {hierarchies.map((hierarchy, index) => (
         <li
-          className="filters--draggable-list-item"
+          className="filters--list-tag"
           draggable="true"
           aria-describedby="operation"
           onDragStart={() => console.log("onDragStart")}
-          onDrop={() => console.log("onDrop")}
           onDragOver={e => console.log("onDragOver")}
           onDragEnd={() => console.log("onDragEnd")}
         >
@@ -53,7 +56,11 @@ const filters = ({
         </li>
       ))}
     </ol>
-    <ul>
+    <ul
+      className={classNames({ "filters--list_is-dragged-on": isDemoting })}
+      onDragOver={onDemotingDragOver}
+      onDragEnd={onDemotingDragEnd}
+    >
       {fullHierarchies
         // make sure list here only shows remaining hierarchies not used
         .filter(hierarchy => {
@@ -66,7 +73,7 @@ const filters = ({
         })
         .map((hierarchy, index) => (
           <li
-            className="filters--draggable-list-item"
+            className="filters--list-tag"
             draggable="true"
             aria-describedby="operation"
           >
@@ -97,12 +104,14 @@ filters.propTypes = {
   hierarchies: PropTypes.arrayOf(PropTypes.string),
   fullHierarchies: PropTypes.arrayOf(PropTypes.string),
   showLeaves: PropTypes.bool,
-  onHierarchyChecked: PropTypes.func,
   onToggleLeaves: PropTypes.func,
   onMoveUpHierarchy: PropTypes.func,
   onMoveDownHierarchy: PropTypes.func,
   onPromoteHierarchy: PropTypes.func,
-  onDemoteHierarchy: PropTypes.func
+  onDemoteHierarchy: PropTypes.func,
+  onDemotingDragOver: PropTypes.func,
+  onDemotingDragEnd: PropTypes.func,
+  isDemoting: PropTypes.bool
 };
 
 filters.defaultProps = {
@@ -110,11 +119,13 @@ filters.defaultProps = {
   fullHierarchies: [],
   showLeaves: false,
   onToggleLeaves: noop,
-  onHierarchyChecked: noop,
   onMoveUpHierarchy: noop,
   onMoveDownHierarchy: noop,
   onPromoteHierarchy: noop,
-  onDemoteHierarchy: noop
+  onDemoteHierarchy: noop,
+  onDemotingDragOver: noop,
+  onDemotingDragEnd: noop,
+  isDemoting: false
 };
 
 export default filters;

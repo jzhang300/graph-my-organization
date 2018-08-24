@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "d3": "^4.11.0",
     "deep-rename-keys": "^0.2.1",
     "react": "^16.0.0",
@@ -16,8 +17,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "gh-pages":
-      "git checkout master && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
+    "gh-pages": "git checkout master && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
