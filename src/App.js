@@ -17,7 +17,19 @@ class App extends Component {
     leafColor: "#fff",
     sortType: "descending",
     diameter: 680,
-    isDemoting: false
+    isDraggingTag: false,
+    // {
+    //   value: String,
+    //   index: number,
+    //   tagType: {ACTIVE, INACTIVE}
+    // }
+    draggedTag: null,
+    // {
+    //   value: String,
+    //   index: number,
+    //   dropzoneType: {ACTIVE, INACTIVE}
+    // }
+    droppedArea: null
   };
   componentDidMount() {
     d3.csv("data/result.csv", (err, data) => {
@@ -46,13 +58,35 @@ class App extends Component {
     });
   }
 
+  evaluateDragDrop() {
+    if (this.state.draggedTag && this.state.droppedArea) {
+      // if dragging an active tag to inactive tags list
+      if (
+        this.state.draggedTag.type === "ACTIVE" &&
+        this.state.droppedArea.type === "INACTIVE"
+      ) {
+        this.deactivateHierarchy(this.state.draggedTag.value);
+      }
+    }
+  }
+
+  deactivateHierarchy(value) {
+    this.setState({
+      hierarchies: this.state.hierarchies.filter(
+        hierarchy => hierarchy !== value
+      )
+    });
+  }
+
   render() {
     return (
       <div
         className="app"
         onDragEnd={() => {
           this.setState({
-            isDemoting: false
+            isDraggingTag: false,
+            draggedTag: null,
+            droppedArea: null
           });
         }}
       >
@@ -86,29 +120,41 @@ class App extends Component {
                   hierarchies: [...this.state.hierarchies, hierarchy]
                 });
               }}
+              onTagDragStart={e => {
+                this.setState({
+                  draggedTag: {
+                    value: e.target.dataset.value,
+                    index: parseInt(e.target.dataset.index, 10),
+                    type: e.target.dataset.type
+                  },
+                  isDraggingTag: true
+                });
+              }}
               onDemoteHierarchy={(e, hierarchy, index) => {
-                this.setState({
-                  hierarchies: this.state.hierarchies.filter(
-                    item => item !== hierarchy
-                  )
-                });
+                this.deactivateHierarchy(hierarchy);
               }}
-              onDemotingDragOver={e => {
-                console.dir(e.target);
-                if (!this.state.isDemoting) {
-                  this.setState({
-                    isDemoting: true
-                  });
-                }
-                console.log(this.state.isDemoting);
+              onDeactivateTagDrop={e => {
+                // e.preventDefault();
+                // console.dir(e.target);
+                // if (!this.state.isDraggingTag) {
+                //   this.setState({
+                //     isDraggingTag: true
+                //   });
+                // }
+                // console.log(this.state.isDraggingTag);
+                this.setState(
+                  {
+                    droppedArea: {
+                      type: "INACTIVE"
+                    }
+                  },
+                  () => {
+                    this.evaluateDragDrop();
+                  }
+                );
+                console.log("onDeactivateTagDrop", e.target);
               }}
-              onDemotingDragEnd={() => {
-                this.setState({
-                  isDemoting: false
-                });
-                console.log(this.state.isDemoting);
-              }}
-              isDemoting={this.state.isDemoting}
+              isDraggingTag={this.state.isDraggingTag}
               showLeaves={this.state.showLeaves}
               hierarchies={this.state.hierarchies}
               onToggleLeaves={e => {

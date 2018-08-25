@@ -566,9 +566,14 @@ body {
 .filters--list-tag {
 }
 
+.filters--list-tag_active {
+}
+.filters--list-tag_inactive {
+}
+
 .filters--list-tag_dragging {
 }
 
-.filters--list_is-dragged-on {
+.filters--list_is-droppable {
   background-color: red;
 }

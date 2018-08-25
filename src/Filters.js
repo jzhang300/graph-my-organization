@@ -12,9 +12,9 @@ const filters = ({
   onPromoteHierarchy,
   onDemoteHierarchy,
   onToggleLeaves,
-  onDemotingDragOver,
-  onDemotingDragEnd,
-  isDemoting,
+  onDeactivateTagDrop,
+  isDraggingTag,
+  onTagDragStart,
   ...props
 }) => (
   <div className="filters" {...props}>
@@ -22,12 +22,13 @@ const filters = ({
     <ol>
       {hierarchies.map((hierarchy, index) => (
         <li
-          className="filters--list-tag"
+          className="filters--list-tag filters--list-tag_active"
           draggable="true"
           aria-describedby="operation"
-          onDragStart={() => console.log("onDragStart")}
-          onDragOver={e => console.log("onDragOver")}
-          onDragEnd={() => console.log("onDragEnd")}
+          onDragStart={onTagDragStart}
+          data-value={hierarchy}
+          data-index={index}
+          data-type="ACTIVE"
         >
           {hierarchy}
           <button
@@ -57,9 +58,11 @@ const filters = ({
       ))}
     </ol>
     <ul
-      className={classNames({ "filters--list_is-dragged-on": isDemoting })}
-      onDragOver={onDemotingDragOver}
-      onDragEnd={onDemotingDragEnd}
+      className={classNames({ "filters--list_is-droppable": isDraggingTag })}
+      onDragOver={e => {
+        e.preventDefault();
+      }}
+      onDrop={onDeactivateTagDrop}
     >
       {fullHierarchies
         // make sure list here only shows remaining hierarchies not used
@@ -73,7 +76,7 @@ const filters = ({
         })
         .map((hierarchy, index) => (
           <li
-            className="filters--list-tag"
+            className="filters--list-tag filters--list-tag_inactive"
             draggable="true"
             aria-describedby="operation"
           >
@@ -109,9 +112,9 @@ filters.propTypes = {
   onMoveDownHierarchy: PropTypes.func,
   onPromoteHierarchy: PropTypes.func,
   onDemoteHierarchy: PropTypes.func,
-  onDemotingDragOver: PropTypes.func,
-  onDemotingDragEnd: PropTypes.func,
-  isDemoting: PropTypes.bool
+  onTagDragStart: PropTypes.func,
+  onDeactivateTagDrop: PropTypes.func,
+  isDraggingTag: PropTypes.bool
 };
 
 filters.defaultProps = {
@@ -123,9 +126,9 @@ filters.defaultProps = {
   onMoveDownHierarchy: noop,
   onPromoteHierarchy: noop,
   onDemoteHierarchy: noop,
-  onDemotingDragOver: noop,
-  onDemotingDragEnd: noop,
-  isDemoting: false
+  onTagDragStart: noop,
+  onDeactivateTagDrop: noop,
+  isDraggingTag: false
 };
 
 export default filters;
