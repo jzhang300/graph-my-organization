@@ -4,6 +4,45 @@ import "./App.css";
 import Bubbles from "./Bubbles";
 import Filters from "./Filters";
 import { extractName } from "./utils";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import Column from "./Column";
+
+// fake data generator
+const getItems = count =>
+  Array.from({ length: count }, (v, k) => k).map(k => ({
+    id: `item-${k}`,
+    content: `item ${k}`
+  }));
+
+// a little function to help us with reordering the result
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
+const grid = 8;
+
+const getItemStyle = (isDragging, draggableStyle) => ({
+  // some basic styles to make the items look a bit nicer
+  userSelect: "none",
+  padding: grid * 2,
+  margin: `0 0 ${grid}px 0`,
+
+  // change background colour if dragging
+  background: isDragging ? "lightgreen" : "grey",
+
+  // styles we need to apply on draggables
+  ...draggableStyle
+});
+
+const getListStyle = isDraggingOver => ({
+  background: isDraggingOver ? "lightblue" : "lightgrey",
+  padding: grid,
+  width: 250
+});
 
 class App extends Component {
   state = {
@@ -17,7 +56,10 @@ class App extends Component {
     leafColor: "#fff",
     sortType: "descending",
     diameter: 680,
+    showLeaves: false,
+    dragOverTagIndex: -1,
     isDraggingTag: false,
+    isDroppingToInactiveTags: false,
     // {
     //   value: String,
     //   index: number,
@@ -29,7 +71,25 @@ class App extends Component {
     //   index: number,
     //   dropzoneType: {ACTIVE, INACTIVE}
     // }
-    droppedArea: null
+    droppedArea: null,
+    tasks: {
+      "task-1": { id: "task-1", content: "Take out the garbage" },
+      "task-2": { id: "task-2", content: "Take out the garbage again" },
+      "task-3": { id: "task-3", content: "Take out the garbage one more time" },
+      "task-4": {
+        id: "task-4",
+        content: "Stop forgetting to take out the garbage!"
+      }
+    },
+    columns: {
+      "column-1": {
+        id: "column-1",
+        title: "To do",
+        taskIds: ["task-1", "task-2", "task-3", "task-4"]
+      }
+    },
+    columnOrder: ["column-1"],
+    items: getItems(10)
   };
   componentDidMount() {
     d3.csv("data/result.csv", (err, data) => {
@@ -78,20 +138,62 @@ class App extends Component {
     });
   }
 
+  resetDragDrop() {
+    this.setState({
+      isDraggingTag: false,
+      isDroppingToInactiveTags: false,
+      draggedTag: null,
+      droppedArea: null
+    });
+  }
+
+  onDragEnd(result) {
+    console.log("result");
+  }
+
   render() {
     return (
       <div
         className="app"
         onDragEnd={() => {
-          this.setState({
-            isDraggingTag: false,
-            draggedTag: null,
-            droppedArea: null
-          });
+          this.resetDragDrop();
         }}
       >
         <div className="container">
           <div className="container--side">
+            <DragDropContext onDragEnd={this.onDragEnd}>
+              <Droppable droppableId="droppable">
+                {(provided, snapshot) => (
+                  <div
+                    ref={provided.innerRef}
+                    style={getListStyle(snapshot.isDraggingOver)}
+                  >
+                    {this.state.items.map((item, index) => (
+                      <Draggable
+                        key={item.id}
+                        draggableId={item.id}
+                        index={index}
+                      >
+                        {(provided, snapshot) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            style={getItemStyle(
+                              snapshot.isDragging,
+                              provided.draggableProps.style
+                            )}
+                          >
+                            {item.content}
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
             <Filters
               style={{ height: `${this.state.diameter}px` }}
               fullHierarchies={this.state.fullHierarchies}
@@ -124,7 +226,9 @@ class App extends Component {
                 this.setState({
                   draggedTag: {
                     value: e.target.dataset.value,
-                    index: parseInt(e.target.dataset.index, 10),
+                    index: e.target.dataset.index
+                      ? parseInt(e.target.dataset.index, 10)
+                      : null,
                     type: e.target.dataset.type
                   },
                   isDraggingTag: true
@@ -134,14 +238,6 @@ class App extends Component {
                 this.deactivateHierarchy(hierarchy);
               }}
               onDeactivateTagDrop={e => {
-                // e.preventDefault();
-                // console.dir(e.target);
-                // if (!this.state.isDraggingTag) {
-                //   this.setState({
-                //     isDraggingTag: true
-                //   });
-                // }
-                // console.log(this.state.isDraggingTag);
                 this.setState(
                   {
                     droppedArea: {
@@ -150,11 +246,86 @@ class App extends Component {
                   },
                   () => {
                     this.evaluateDragDrop();
+                    this.resetDragDrop();
                   }
                 );
-                console.log("onDeactivateTagDrop", e.target);
+              }}
+              onActiveTagDragEnter={e => {
+                // if (e.target.dataset.index === this.state.dragOverTagIndex) {
+                //   console.log(
+                //     e.target.dataset.index,
+                //     this.state.dragOverTagIndex
+                //   );
+                //
+                // }
+                e.preventDefault();
+                e.stopPropagation();
+                e.nativeEvent.stopImmediatePropagation();
+                const index = e.target.dataset.index;
+                this.setState(
+                  {
+                    dragOverTagIndex: index ? parseInt(index, 10) : -1
+                  },
+                  () => {
+                    console.log(
+                      "onActiveTagDragEnter",
+                      index,
+                      this.state.dragOverTagIndex
+                    );
+                  }
+                );
+              }}
+              onActiveTagDragOver={e => {
+                e.preventDefault();
+                const index = e.target.dataset.index
+                  ? parseInt(e.target.dataset.index, 10)
+                  : -1;
+                console.log(
+                  "onActiveTagDragOver",
+                  index,
+                  this.state.dragOverTagIndex,
+                  this.state.dragOverTagIndex !== index
+                );
+                if (this.state.dragOverTagIndex !== index) {
+                  this.setState({
+                    dragOverTagIndex: index
+                  });
+                }
+              }}
+              onActiveTagDragLeave={e => {
+                e.preventDefault();
+                e.stopPropagation();
+                e.nativeEvent.stopImmediatePropagation();
+                this.setState(
+                  {
+                    dragOverTagIndex: -1
+                  },
+                  () => {
+                    console.log(
+                      "onActiveTagDragLeave",
+                      this.state.dragOverTagIndex
+                    );
+                  }
+                );
+              }}
+              onInactiveTagsDragOver={() => {
+                if (!this.state.isDroppingToInactiveTags) {
+                  console.log(this.state.isDroppingToInactiveTags);
+                  // this.setState({
+                  //   isDroppingToInactiveTags: true
+                  // });
+                }
+              }}
+              onInactiveTagsDragLeave={e => {
+                this.setState({
+                  isDroppingToInactiveTags: false
+                });
               }}
               isDraggingTag={this.state.isDraggingTag}
+              isDroppingToInactiveTags={
+                this.state.isDraggingTag && this.state.isDroppingToInactiveTags
+              }
+              dragOverTagIndex={this.state.dragOverTagIndex}
               showLeaves={this.state.showLeaves}
               hierarchies={this.state.hierarchies}
               onToggleLeaves={e => {

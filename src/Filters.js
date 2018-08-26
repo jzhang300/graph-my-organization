@@ -13,7 +13,14 @@ const filters = ({
   onDemoteHierarchy,
   onToggleLeaves,
   onDeactivateTagDrop,
+  onActiveTagDragEnter,
+  onActiveTagDragOver,
+  onActiveTagDragLeave,
+  onInactiveTagsDragOver,
+  onInactiveTagsDragLeave,
   isDraggingTag,
+  isDroppingToInactiveTags,
+  dragOverTagIndex,
   onTagDragStart,
   ...props
 }) => (
@@ -22,10 +29,17 @@ const filters = ({
     <ol>
       {hierarchies.map((hierarchy, index) => (
         <li
-          className="filters--list-tag filters--list-tag_active"
+          className={classNames(
+            "filters--list-tag",
+            "filters--list-tag_active",
+            { "filters--list-tag_is-dropping": dragOverTagIndex === index }
+          )}
           draggable="true"
           aria-describedby="operation"
           onDragStart={onTagDragStart}
+          onDragEnter={onActiveTagDragEnter}
+          onDragOver={onActiveTagDragOver}
+          onDragLeave={onActiveTagDragLeave}
           data-value={hierarchy}
           data-index={index}
           data-type="ACTIVE"
@@ -58,10 +72,19 @@ const filters = ({
       ))}
     </ol>
     <ul
-      className={classNames({ "filters--list_is-droppable": isDraggingTag })}
+      className={classNames(
+        {
+          "filters--list_is-droppable": isDraggingTag
+        },
+        {
+          "filters--list_is-dropping": isDroppingToInactiveTags
+        }
+      )}
       onDragOver={e => {
         e.preventDefault();
+        onInactiveTagsDragOver(e);
       }}
+      onDragLeave={onInactiveTagsDragLeave}
       onDrop={onDeactivateTagDrop}
     >
       {fullHierarchies
@@ -79,6 +102,9 @@ const filters = ({
             className="filters--list-tag filters--list-tag_inactive"
             draggable="true"
             aria-describedby="operation"
+            onDragStart={onTagDragStart}
+            data-value={hierarchy}
+            data-type="INACTIVE"
           >
             {hierarchy}
             <button
@@ -114,7 +140,14 @@ filters.propTypes = {
   onDemoteHierarchy: PropTypes.func,
   onTagDragStart: PropTypes.func,
   onDeactivateTagDrop: PropTypes.func,
-  isDraggingTag: PropTypes.bool
+  onActiveTagDragEnter: PropTypes.func,
+  onActiveTagDragOver: PropTypes.func,
+  onActiveTagDragLeave: PropTypes.func,
+  onInactiveTagsDragOver: PropTypes.func,
+  onInactiveTagsDragLeave: PropTypes.func,
+  isDraggingTag: PropTypes.bool,
+  isDroppingToInactiveTags: PropTypes.bool,
+  dragOverTagIndex: PropTypes.number
 };
 
 filters.defaultProps = {
@@ -127,8 +160,15 @@ filters.defaultProps = {
   onPromoteHierarchy: noop,
   onDemoteHierarchy: noop,
   onTagDragStart: noop,
+  onActiveTagDragEnter: noop,
+  onActiveTagDragOver: noop,
+  onActiveTagDragLeave: noop,
+  onInactiveTagsDragOver: noop,
+  onInactiveTagsDragLeave: noop,
   onDeactivateTagDrop: noop,
-  isDraggingTag: false
+  isDraggingTag: false,
+  isDroppingToInactiveTags: false,
+  dragOverTagIndex: -1
 };
 
 export default filters;
