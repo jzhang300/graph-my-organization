@@ -4,93 +4,38 @@ import "./App.css";
 import Bubbles from "./Bubbles";
 import Filters from "./Filters";
 import { extractName } from "./utils";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import Column from "./Column";
-
-// fake data generator
-const getItems = count =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k}`,
-    content: `item ${k}`
-  }));
-
-// a little function to help us with reordering the result
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
-
-const grid = 8;
-
-const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
-  userSelect: "none",
-  padding: grid * 2,
-  margin: `0 0 ${grid}px 0`,
-
-  // change background colour if dragging
-  background: isDragging ? "lightgreen" : "grey",
-
-  // styles we need to apply on draggables
-  ...draggableStyle
-});
-
-const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "lightblue" : "lightgrey",
-  padding: grid,
-  width: 250
-});
 
 class App extends Component {
   state = {
     fullData: [],
-    fullHierarchies: [],
     data: [],
-    hierarchies: ["Product", "Skills"],
     flag: false,
-    hierarchyString: "",
     colorRange: ["#8ee9d4", "#008673"],
     leafColor: "#fff",
     sortType: "descending",
     diameter: 680,
-    showLeaves: false,
-    dragOverTagIndex: -1,
-    isDraggingTag: false,
-    isDroppingToInactiveTags: false,
-    // {
-    //   value: String,
-    //   index: number,
-    //   tagType: {ACTIVE, INACTIVE}
-    // }
-    draggedTag: null,
-    // {
-    //   value: String,
-    //   index: number,
-    //   dropzoneType: {ACTIVE, INACTIVE}
-    // }
-    droppedArea: null,
-    tasks: {
-      "task-1": { id: "task-1", content: "Take out the garbage" },
-      "task-2": { id: "task-2", content: "Take out the garbage again" },
-      "task-3": { id: "task-3", content: "Take out the garbage one more time" },
-      "task-4": {
-        id: "task-4",
-        content: "Stop forgetting to take out the garbage!"
+    showLeaves: true,
+    // { "hierarchy-1": { id: "hierarchy-1", content: "Product" }, ... }
+    hierarchies: {},
+    dropzones: {
+      "active-tags": {
+        id: "active-tags",
+        title: "Active tags",
+        hierarchies: [] // array of string hierarchy id's
+      },
+      "inactive-tags": {
+        id: "inactive-tags",
+        title: "Inactive tags",
+        hierarchies: []
       }
-    },
-    columns: {
-      "column-1": {
-        id: "column-1",
-        title: "To do",
-        taskIds: ["task-1", "task-2", "task-3", "task-4"]
-      }
-    },
-    columnOrder: ["column-1"],
-    items: getItems(10)
+    }
   };
+
+  constructor(props) {
+    super(props);
+    this.onHierarchiesDragEnd = this.onHierarchiesDragEnd.bind(this);
+  }
+
   componentDidMount() {
     d3.csv("data/result.csv", (err, data) => {
       if (err) {
@@ -103,229 +48,130 @@ class App extends Component {
         name: extractName(item.Employee)
       }));
 
-      const fullHierarchies =
+      let hierarchies =
         transformation.length > 0 && transformation[0] instanceof Object
           ? Object.keys(transformation[0])
           : [];
 
+      let inactiveHierarchies = [];
+      let activeHierarchies;
+
+      hierarchies = hierarchies
+        // blacklist any tags
+        .filter(
+          hierarchy =>
+            hierarchy !== "_id" &&
+            hierarchy !== "Employee" &&
+            hierarchy !== "name"
+        )
+        // transform into dictionary db
+        .reduce((accumulator, current, index) => {
+          const id = `hierarchy-${index}`;
+          inactiveHierarchies.push(id);
+          return {
+            ...accumulator,
+            [id]: {
+              id,
+              content: current
+            }
+          };
+        }, {});
+
+      [activeHierarchies, ...inactiveHierarchies] = inactiveHierarchies;
+
       this.setState({
         data: transformation,
         fullData: transformation,
-        fullHierarchies: fullHierarchies.filter(
-          hierarchy => hierarchy !== "_id"
-        )
+        hierarchies,
+        dropzones: {
+          "active-tags": {
+            ...this.state.dropzones["active-tags"],
+            hierarchies: [activeHierarchies]
+          },
+          "inactive-tags": {
+            ...this.state.dropzones["inactive-tags"],
+            hierarchies: inactiveHierarchies
+          }
+        }
       });
     });
   }
 
-  evaluateDragDrop() {
-    if (this.state.draggedTag && this.state.droppedArea) {
-      // if dragging an active tag to inactive tags list
-      if (
-        this.state.draggedTag.type === "ACTIVE" &&
-        this.state.droppedArea.type === "INACTIVE"
-      ) {
-        this.deactivateHierarchy(this.state.draggedTag.value);
-      }
+  onHierarchiesDragEnd(result) {
+    const { destination, source, draggableId } = result;
+
+    // if destination is nothing, do nothing
+    if (!destination) {
+      return;
     }
-  }
 
-  deactivateHierarchy(value) {
-    this.setState({
-      hierarchies: this.state.hierarchies.filter(
-        hierarchy => hierarchy !== value
-      )
-    });
-  }
+    // if source and destination is same, do nothing
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
 
-  resetDragDrop() {
-    this.setState({
-      isDraggingTag: false,
-      isDroppingToInactiveTags: false,
-      draggedTag: null,
-      droppedArea: null
-    });
-  }
+    // if dragging in same dropzone
+    if (destination.droppableId === source.droppableId) {
+      const dropzone = this.state.dropzones[source.droppableId];
+      // insert source index to destination index
+      const newHierarchies = dropzone.hierarchies.slice(0);
+      newHierarchies.splice(source.index, 1);
+      newHierarchies.splice(destination.index, 0, draggableId);
 
-  onDragEnd(result) {
-    console.log("result");
+      const newDropzone = {
+        ...dropzone,
+        hierarchies: newHierarchies
+      };
+
+      const newState = {
+        ...this.state,
+        dropzones: {
+          ...this.state.dropzones,
+          [newDropzone.id]: newDropzone
+        }
+      };
+
+      this.setState(newState);
+    } else {
+      // if dragging to different dropzone
+
+      let sourceDropzone = this.state.dropzones[source.droppableId];
+      let destinationDropzone = this.state.dropzones[destination.droppableId];
+      let sourceHierarchies = sourceDropzone.hierarchies.slice(0);
+      sourceHierarchies.splice(source.index, 1);
+      let destinationHierarchies = destinationDropzone.hierarchies.slice(0);
+      destinationHierarchies.splice(destination.index, 0, draggableId);
+      sourceDropzone = {
+        ...sourceDropzone,
+        hierarchies: sourceHierarchies
+      };
+      destinationDropzone = {
+        ...destinationDropzone,
+        hierarchies: destinationHierarchies
+      };
+
+      const newState = {
+        ...this.state,
+        dropzones: {
+          [sourceDropzone.id]: sourceDropzone,
+          [destinationDropzone.id]: destinationDropzone
+        }
+      };
+
+      this.setState(newState);
+    }
   }
 
   render() {
     return (
-      <div
-        className="app"
-        onDragEnd={() => {
-          this.resetDragDrop();
-        }}
-      >
+      <div className="app">
         <div className="container">
           <div className="container--side">
-            <DragDropContext onDragEnd={this.onDragEnd}>
-              <Droppable droppableId="droppable">
-                {(provided, snapshot) => (
-                  <div
-                    ref={provided.innerRef}
-                    style={getListStyle(snapshot.isDraggingOver)}
-                  >
-                    {this.state.items.map((item, index) => (
-                      <Draggable
-                        key={item.id}
-                        draggableId={item.id}
-                        index={index}
-                      >
-                        {(provided, snapshot) => (
-                          <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            style={getItemStyle(
-                              snapshot.isDragging,
-                              provided.draggableProps.style
-                            )}
-                          >
-                            {item.content}
-                          </div>
-                        )}
-                      </Draggable>
-                    ))}
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </DragDropContext>
             <Filters
               style={{ height: `${this.state.diameter}px` }}
-              fullHierarchies={this.state.fullHierarchies}
-              onMoveUpHierarchy={(e, hierarchy, index) => {
-                const swappedHierarchies = [...this.state.hierarchies];
-                [swappedHierarchies[index], swappedHierarchies[index - 1]] = [
-                  swappedHierarchies[index - 1],
-                  swappedHierarchies[index]
-                ];
-                this.setState({
-                  hierarchies: swappedHierarchies
-                });
-              }}
-              onMoveDownHierarchy={(e, hierarchy, index) => {
-                const swappedHierarchies = [...this.state.hierarchies];
-                [swappedHierarchies[index], swappedHierarchies[index + 1]] = [
-                  swappedHierarchies[index + 1],
-                  swappedHierarchies[index]
-                ];
-                this.setState({
-                  hierarchies: swappedHierarchies
-                });
-              }}
-              onPromoteHierarchy={(e, hierarchy, index) => {
-                this.setState({
-                  hierarchies: [...this.state.hierarchies, hierarchy]
-                });
-              }}
-              onTagDragStart={e => {
-                this.setState({
-                  draggedTag: {
-                    value: e.target.dataset.value,
-                    index: e.target.dataset.index
-                      ? parseInt(e.target.dataset.index, 10)
-                      : null,
-                    type: e.target.dataset.type
-                  },
-                  isDraggingTag: true
-                });
-              }}
-              onDemoteHierarchy={(e, hierarchy, index) => {
-                this.deactivateHierarchy(hierarchy);
-              }}
-              onDeactivateTagDrop={e => {
-                this.setState(
-                  {
-                    droppedArea: {
-                      type: "INACTIVE"
-                    }
-                  },
-                  () => {
-                    this.evaluateDragDrop();
-                    this.resetDragDrop();
-                  }
-                );
-              }}
-              onActiveTagDragEnter={e => {
-                // if (e.target.dataset.index === this.state.dragOverTagIndex) {
-                //   console.log(
-                //     e.target.dataset.index,
-                //     this.state.dragOverTagIndex
-                //   );
-                //
-                // }
-                e.preventDefault();
-                e.stopPropagation();
-                e.nativeEvent.stopImmediatePropagation();
-                const index = e.target.dataset.index;
-                this.setState(
-                  {
-                    dragOverTagIndex: index ? parseInt(index, 10) : -1
-                  },
-                  () => {
-                    console.log(
-                      "onActiveTagDragEnter",
-                      index,
-                      this.state.dragOverTagIndex
-                    );
-                  }
-                );
-              }}
-              onActiveTagDragOver={e => {
-                e.preventDefault();
-                const index = e.target.dataset.index
-                  ? parseInt(e.target.dataset.index, 10)
-                  : -1;
-                console.log(
-                  "onActiveTagDragOver",
-                  index,
-                  this.state.dragOverTagIndex,
-                  this.state.dragOverTagIndex !== index
-                );
-                if (this.state.dragOverTagIndex !== index) {
-                  this.setState({
-                    dragOverTagIndex: index
-                  });
-                }
-              }}
-              onActiveTagDragLeave={e => {
-                e.preventDefault();
-                e.stopPropagation();
-                e.nativeEvent.stopImmediatePropagation();
-                this.setState(
-                  {
-                    dragOverTagIndex: -1
-                  },
-                  () => {
-                    console.log(
-                      "onActiveTagDragLeave",
-                      this.state.dragOverTagIndex
-                    );
-                  }
-                );
-              }}
-              onInactiveTagsDragOver={() => {
-                if (!this.state.isDroppingToInactiveTags) {
-                  console.log(this.state.isDroppingToInactiveTags);
-                  // this.setState({
-                  //   isDroppingToInactiveTags: true
-                  // });
-                }
-              }}
-              onInactiveTagsDragLeave={e => {
-                this.setState({
-                  isDroppingToInactiveTags: false
-                });
-              }}
-              isDraggingTag={this.state.isDraggingTag}
-              isDroppingToInactiveTags={
-                this.state.isDraggingTag && this.state.isDroppingToInactiveTags
-              }
-              dragOverTagIndex={this.state.dragOverTagIndex}
               showLeaves={this.state.showLeaves}
               hierarchies={this.state.hierarchies}
               onToggleLeaves={e => {
@@ -333,12 +179,16 @@ class App extends Component {
                   showLeaves: !prevState.showLeaves
                 }));
               }}
+              dropzones={this.state.dropzones}
+              onDragEnd={this.onHierarchiesDragEnd}
             />
           </div>
           <div className="container--main">
             <Bubbles
               data={this.state.data}
-              hierarchies={this.state.hierarchies}
+              hierarchies={this.state.dropzones["active-tags"].hierarchies.map(
+                id => this.state.hierarchies[id].content
+              )}
               leafColor={this.state.leafColor}
               sortType={this.state.sortType}
               colorRange={this.state.colorRange}

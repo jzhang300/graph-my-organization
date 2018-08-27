@@ -492,6 +492,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .container {
@@ -559,33 +560,6 @@ body {
   text-align: left;
 }
 
-.filters--draggable-list-item {
-  display: flex;
-}
-
-.filters--list-tag {
-}
-.filters--list-tag button {
-  visibility: hidden;
-}
-.filters--list-tag:hover button {
-  visibility: visible;
-}
-.filters--list-tag_active {
-}
-.filters--list-tag_inactive {
-}
-
-.filters--list-tag_is-dropping {
-  background-color: blue;
-}
-
-.filters--list-tag_dragging {
-}
-
-.filters--list_is-droppable {
-  background-color: red;
-}
-.filters--list_is-dropping {
-  background-color: blue;
+.dropzone {
+  margin-top: 1rem;
 }
