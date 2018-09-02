@@ -1,35 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { DragDropContext } from "react-beautiful-dnd";
 import { noop } from "./utils";
 import Dropzone from "./Dropzone";
 
 const filters = ({
+  title,
   showLeaves,
   hierarchies,
-  fullHierarchies,
-  onMoveUpHierarchy,
-  onMoveDownHierarchy,
-  onPromoteHierarchy,
-  onDemoteHierarchy,
   onToggleLeaves,
-  onDeactivateTagDrop,
-  onActiveTagDragEnter,
-  onActiveTagDragOver,
-  onActiveTagDragLeave,
-  onInactiveTagsDragOver,
-  onInactiveTagsDragLeave,
-  isDraggingTag,
-  isDroppingToInactiveTags,
-  dragOverTagIndex,
-  onTagDragStart,
   dropzones,
   onDragEnd,
+  onSearchChange,
   ...props
 }) => (
   <div className="filters" {...props}>
-    <p>Hierarchies</p>
+    <h2>{title}</h2>
+    <input type="text" onChange={onSearchChange} />
+    <h2>Hierarchies</h2>
 
     <DragDropContext
       onDragEnd={result => {
@@ -50,30 +38,33 @@ const filters = ({
       />
     </DragDropContext>
 
-    <p>Toggle Leaves</p>
-    <input
-      id="show-leaves"
-      type="checkbox"
-      checked={showLeaves}
-      onChange={onToggleLeaves}
-    />
-    <label htmlFor="show-leaves">Show Leaves</label>
+    <h2>Toggle Leaves</h2>
+    <div className="filters--checkbox-container">
+      <input
+        className="filters--checkbox-input"
+        id="show-leaves"
+        type="checkbox"
+        checked={showLeaves}
+        onChange={onToggleLeaves}
+      />
+      <label htmlFor="show-leaves">Show Leaves</label>
+    </div>
   </div>
 );
 
 filters.propTypes = {
-  hierarchies: PropTypes.obj,
-  fullHierarchies: PropTypes.arrayOf(PropTypes.string),
+  hierarchies: PropTypes.object,
   showLeaves: PropTypes.bool,
   onToggleLeaves: PropTypes.func,
-  dropzones: PropTypes.obj,
+  onSearchChange: PropTypes.func,
+  dropzones: PropTypes.object,
   onDragEnd: PropTypes.func
 };
 
 filters.defaultProps = {
   showLeaves: false,
   onToggleLeaves: noop,
-  dragOverTagIndex: -1
+  onSearchChange: noop
 };
 
 export default filters;

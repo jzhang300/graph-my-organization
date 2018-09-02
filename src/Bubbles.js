@@ -111,7 +111,7 @@ export default class Bubbles extends React.Component {
    */
   zoomTo = view => {
     const self = this;
-    const k = self.state.root.r * 2 / view[2];
+    const k = (self.state.root.r * 2) / view[2];
     this.state.g1
       .selectAll("circle")
       .attr("r", d => d.r * k)
@@ -144,7 +144,9 @@ export default class Bubbles extends React.Component {
     const self = this;
     const i = d3.interpolateZoom(self.state.view, [d.x, d.y, d.r * 2]);
     let transition;
+    console.log(self, self.realProps);
     self.setState({ focus: d }, () => {
+      self.realProps.onZoom(self.state.focus);
       transition = d3
         .transition()
         .duration(750)
@@ -163,19 +165,25 @@ export default class Bubbles extends React.Component {
         .on("end", function(d2) {
           if (d2.parent !== self.state.focus) this.style.display = "none";
         });
-      self.realProps.onZoom();
     });
   };
 
   wrap(text) {
     text.each(function(d) {
       var text = d3.select(this),
-        words = text.text().split(/\s+/).reverse(),
+        words = text
+          .text()
+          .split(/\s+/)
+          .reverse(),
         word,
         line = [],
         y = text.attr("y"),
         // dy = parseFloat(text.attr("dy") || 0),
-        tspan = text.text(null).append("span").attr("x", 0).attr("y", y);
+        tspan = text
+          .text(null)
+          .append("span")
+          .attr("x", 0)
+          .attr("y", y);
       while ((word = words.pop())) {
         line.push(word);
         tspan.text(line.join(" "));
@@ -184,7 +192,11 @@ export default class Bubbles extends React.Component {
           line.pop();
           tspan.text(line.join(" "));
           line = [word];
-          tspan = text.append("span").attr("x", 0).attr("y", y).text(word);
+          tspan = text
+            .append("span")
+            .attr("x", 0)
+            .attr("y", y)
+            .text(word);
         }
       }
 
@@ -217,7 +229,10 @@ export default class Bubbles extends React.Component {
       let selection = d3.select(this);
       let words = d.data.data.name.split(/\s+/);
       words.forEach(word =>
-        selection.append("span").attr("class", "label--text").text(word)
+        selection
+          .append("span")
+          .attr("class", "label--text")
+          .text(word)
       );
     });
   }
@@ -241,9 +256,9 @@ export default class Bubbles extends React.Component {
       .attr(
         "class",
         d =>
-          `bubble-chart--node ${d.depth > this.realProps.hierarchies.length
-            ? "leaf"
-            : ""}`
+          `bubble-chart--node ${
+            d.depth > this.realProps.hierarchies.length ? "leaf" : ""
+          }`
       )
       .attr("transform", d => `translate(${d.x},${d.y})`)
       .attr("r", 0)
@@ -371,7 +386,10 @@ export default class Bubbles extends React.Component {
         this.bubblesExit(bubblesExit);
 
         const text = g2.selectAll(".label").data(bubblesData);
-        const textEnter = text.enter().append("div").attr("class", "label");
+        const textEnter = text
+          .enter()
+          .append("div")
+          .attr("class", "label");
         const textExit = text.exit();
 
         textEnter

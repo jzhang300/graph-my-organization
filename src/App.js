@@ -17,6 +17,8 @@ class App extends Component {
     showLeaves: true,
     // { "hierarchy-1": { id: "hierarchy-1", content: "Product" }, ... }
     hierarchies: {},
+    search: "",
+    title: "All",
     dropzones: {
       "active-tags": {
         id: "active-tags",
@@ -34,6 +36,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.onHierarchiesDragEnd = this.onHierarchiesDragEnd.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
   }
 
   componentDidMount() {
@@ -165,6 +168,12 @@ class App extends Component {
     }
   }
 
+  onSearchChange(e) {
+    // this.setState({
+    //   search: e.target.value
+    // });
+  }
+
   render() {
     return (
       <div className="app">
@@ -172,6 +181,7 @@ class App extends Component {
           <div className="container--side">
             <Filters
               style={{ height: `${this.state.diameter}px` }}
+              title={this.state.title}
               showLeaves={this.state.showLeaves}
               hierarchies={this.state.hierarchies}
               onToggleLeaves={e => {
@@ -181,6 +191,7 @@ class App extends Component {
               }}
               dropzones={this.state.dropzones}
               onDragEnd={this.onHierarchiesDragEnd}
+              onSearchChange={this.onSearchChange}
             />
           </div>
           <div className="container--main">
@@ -194,6 +205,21 @@ class App extends Component {
               colorRange={this.state.colorRange}
               showLeaves={this.state.showLeaves}
               diameter={this.state.diameter}
+              onZoom={focus => {
+                // const focus = cloneDeep(focus);
+                // console.log(focus);
+                // console.log(this);
+                // setTimeout(() => {
+                //   this.setState(
+                //     {
+                //       title: "h"
+                //     },
+                //     () => {
+                //       console.log(focus, focus.data.data.children.length);
+                //     }
+                //   );
+                // }, 1000);
+              }}
             />
           </div>
         </div>

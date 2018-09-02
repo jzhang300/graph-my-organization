@@ -531,6 +531,7 @@ body {
 
 .label--inner {
   display: block;
+  line-height: 1;
 }
 
 .label--text {
@@ -538,6 +539,7 @@ body {
   color: #333;
   display: inline-block;
   padding: 0.2em 0.5em 0.3em;
+  font-size: 0.65rem;
 }
 
 .label--text:not(:first-child):not(:last-child) {
@@ -558,6 +560,16 @@ body {
   height: 100%;
   background-color: #f8fafa;
   text-align: left;
+  padding: 1rem;
+}
+
+.filters--checkbox-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.filters--checkbox-input {
+  margin-right: 0.5rem;
 }
 
 .dropzone {
